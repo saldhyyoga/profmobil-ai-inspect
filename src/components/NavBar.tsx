@@ -18,6 +18,7 @@ const NavBar: React.FC = () => {
             <div className="ml-10 flex items-center space-x-4">
               <a href="#features" className="text-gray-700 hover:text-automotive-600 px-3 py-2 rounded-md text-sm font-medium">Features</a>
               <a href="#how-it-works" className="text-gray-700 hover:text-automotive-600 px-3 py-2 rounded-md text-sm font-medium">How It Works</a>
+              <a href="#standards" className="text-gray-700 hover:text-automotive-600 px-3 py-2 rounded-md text-sm font-medium">Standards</a>
               <a href="#pricing" className="text-gray-700 hover:text-automotive-600 px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
               <Button className="bg-automotive-600 hover:bg-automotive-700">Get Started</Button>
             </div>
@@ -38,6 +39,7 @@ const NavBar: React.FC = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
             <a href="#features" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Features</a>
             <a href="#how-it-works" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">How It Works</a>
+            <a href="#standards" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Standards</a>
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Pricing</a>
             <Button className="w-full mt-2 bg-automotive-600 hover:bg-automotive-700">Get Started</Button>
           </div>
