@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Car, FileText, Wrench, Engine } from "lucide-react";
+import { Car, FileText, Wrench, Cog } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 interface StandardCardProps {
@@ -39,7 +39,7 @@ const InspectionStandardsSection = () => {
       description: "Comprehensive cabin inspection - trim, dashboard, electronic features, and indications of flood damage or hidden damage."
     },
     {
-      icon: <Engine className="h-5 w-5" />,
+      icon: <Cog className="h-5 w-5" />,
       title: "Engine & Transmission",
       description: "Evaluation of mechanical components - engine, transmission, brakes, suspension."
     },
