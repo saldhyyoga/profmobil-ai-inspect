@@ -62,10 +62,10 @@ const CarValueCalculator = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Car Value Calculator
+            Kalkulator Nilai Mobil
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            Get an instant AI-powered estimate of your car's market value.
+            Dapatkan estimasi nilai pasar mobil Anda secara instan dengan teknologi AI.
           </p>
         </div>
 
@@ -73,21 +73,21 @@ const CarValueCalculator = () => {
           <div>
             <Card>
               <CardHeader>
-                <CardTitle>Value Estimator</CardTitle>
+                <CardTitle>Estimator Nilai</CardTitle>
                 <CardDescription>
-                  Enter your vehicle details for an AI-powered market valuation
+                  Masukkan detail kendaraan Anda untuk penilaian pasar berbasis AI
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="make">Make</Label>
+                    <Label htmlFor="make">Merek</Label>
                     <Select 
                       value={make} 
                       onValueChange={setMake}
                     >
                       <SelectTrigger id="make">
-                        <SelectValue placeholder="Select make" />
+                        <SelectValue placeholder="Pilih merek" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="toyota">Toyota</SelectItem>
@@ -106,7 +106,7 @@ const CarValueCalculator = () => {
                       onValueChange={setModel}
                     >
                       <SelectTrigger id="model">
-                        <SelectValue placeholder="Select model" />
+                        <SelectValue placeholder="Pilih model" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="corolla">Corolla</SelectItem>
@@ -120,13 +120,13 @@ const CarValueCalculator = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="year">Year</Label>
+                  <Label htmlFor="year">Tahun</Label>
                   <Select 
                     value={year} 
                     onValueChange={setYear}
                   >
                     <SelectTrigger id="year">
-                      <SelectValue placeholder="Select year" />
+                      <SelectValue placeholder="Pilih tahun" />
                     </SelectTrigger>
                     <SelectContent>
                       {Array.from({ length: 10 }, (_, i) => 2023 - i).map((y) => (
@@ -140,8 +140,8 @@ const CarValueCalculator = () => {
 
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <Label htmlFor="mileage">Mileage</Label>
-                    <span className="text-sm text-gray-500">{mileage.toLocaleString()} miles</span>
+                    <Label htmlFor="mileage">Kilometer</Label>
+                    <span className="text-sm text-gray-500">{mileage.toLocaleString()} km</span>
                   </div>
                   <Slider 
                     id="mileage"
@@ -155,19 +155,19 @@ const CarValueCalculator = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="condition">Condition</Label>
+                  <Label htmlFor="condition">Kondisi</Label>
                   <Select 
                     value={condition} 
                     onValueChange={setCondition}
                   >
                     <SelectTrigger id="condition">
-                      <SelectValue placeholder="Select condition" />
+                      <SelectValue placeholder="Pilih kondisi" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="excellent">Excellent</SelectItem>
-                      <SelectItem value="good">Good</SelectItem>
-                      <SelectItem value="fair">Fair</SelectItem>
-                      <SelectItem value="poor">Poor</SelectItem>
+                      <SelectItem value="excellent">Sangat Baik</SelectItem>
+                      <SelectItem value="good">Baik</SelectItem>
+                      <SelectItem value="fair">Cukup Baik</SelectItem>
+                      <SelectItem value="poor">Kurang Baik</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -178,7 +178,7 @@ const CarValueCalculator = () => {
                   className="w-full bg-automotive-600 hover:bg-automotive-700"
                   disabled={loading || !make || !model}
                 >
-                  {loading ? "Calculating..." : "Calculate Value"}
+                  {loading ? "Menghitung..." : "Hitung Nilai"}
                 </Button>
               </CardFooter>
             </Card>
@@ -187,8 +187,8 @@ const CarValueCalculator = () => {
           <div className="flex items-center justify-center">
             <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100 w-full max-w-md">
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-2">Estimated Value</h3>
-                <p className="text-sm text-gray-500 mb-6">Based on AI market analysis and condition</p>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-2">Estimasi Nilai</h3>
+                <p className="text-sm text-gray-500 mb-6">Berdasarkan analisis pasar AI dan kondisi</p>
                 
                 {estimatedValue ? (
                   <div className="space-y-4">
@@ -197,21 +197,21 @@ const CarValueCalculator = () => {
                         <div className="w-full h-full bg-automotive-100 opacity-50 rounded-full blur-xl"></div>
                       </div>
                       <span className="relative text-5xl font-bold text-automotive-700">
-                        ${estimatedValue.toLocaleString()}
+                        Rp{estimatedValue.toLocaleString()}
                       </span>
                     </div>
                     
                     <p className="text-gray-600 mt-4">
-                      This estimate is based on similar vehicles in your area with comparable features and condition.
+                      Estimasi ini didasarkan pada kendaraan serupa di area Anda dengan fitur dan kondisi yang sebanding.
                     </p>
                     
                     <Button variant="outline" className="mt-6 border-automotive-600 text-automotive-600 hover:bg-automotive-50">
-                      Get Full Report
+                      Dapatkan Laporan Lengkap
                     </Button>
                   </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center h-48 bg-gray-50 rounded-lg border border-dashed border-gray-300">
-                    <p className="text-gray-500">Enter vehicle details and calculate to see the estimated value</p>
+                    <p className="text-gray-500">Masukkan detail kendaraan dan hitung untuk melihat estimasi nilai</p>
                   </div>
                 )}
               </div>

@@ -21,23 +21,23 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: <Camera className="h-6 w-6 text-automotive-600" />,
-      title: "AI Smart Inspection",
-      description: "Our AI technology scans and detects physical damage, predicts potential issues, and provides a detailed analysis of the car's condition."
+      title: "Inspeksi Cerdas AI",
+      description: "Teknologi AI kami memindai dan mendeteksi kerusakan fisik, memprediksi masalah potensial, dan memberikan analisis mendetail tentang kondisi mobil."
     },
     {
       icon: <FileCheck className="h-6 w-6 text-automotive-600" />,
-      title: "Digital Reports",
-      description: "Access comprehensive digital inspection reports instantly via our app or web platform with detailed analysis and recommendations."
+      title: "Laporan Digital",
+      description: "Akses laporan inspeksi digital yang komprehensif secara instan melalui aplikasi atau platform web kami dengan analisis dan rekomendasi mendetail."
     },
     {
       icon: <Search className="h-6 w-6 text-automotive-600" />,
-      title: "Market Value Calculation",
-      description: "Get accurate market valuations based on AI analysis of the car's condition, market trends, and comprehensive data points."
+      title: "Perhitungan Nilai Pasar",
+      description: "Dapatkan penilaian pasar yang akurat berdasarkan analisis AI tentang kondisi mobil, tren pasar, dan data komprehensif."
     },
     {
       icon: <Check className="h-6 w-6 text-automotive-600" />,
-      title: "Smart Recommendations",
-      description: "Receive personalized car recommendations based on your preferences, budget, and inspection results powered by our AI."
+      title: "Rekomendasi Cerdas",
+      description: "Terima rekomendasi mobil yang dipersonalisasi berdasarkan preferensi, anggaran, dan hasil inspeksi Anda yang didukung oleh AI kami."
     }
   ];
 
@@ -46,10 +46,10 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            AI-Powered Features
+            Fitur Bertenaga AI
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            Our cutting-edge technology provides comprehensive vehicle analysis and insights.
+            Teknologi mutakhir kami menyediakan analisis dan wawasan kendaraan yang komprehensif.
           </p>
         </div>
 

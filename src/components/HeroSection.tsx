@@ -11,33 +11,33 @@ const HeroSection = () => {
             <div className="text-center lg:text-left lg:grid lg:grid-cols-12 lg:gap-8 items-center">
               <div className="lg:col-span-6">
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                  <span className="block">AI-Powered</span>
-                  <span className="block text-automotive-600">Used Car Inspection</span>
+                  <span className="block">Inspeksi Mobil Bekas</span>
+                  <span className="block text-automotive-600">Bertenaga AI</span>
                 </h1>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg md:mt-5 md:text-xl">
-                  ProfMobil AI delivers accurate, comprehensive car inspections powered by advanced artificial intelligence. Get detailed reports, damage predictions, and market valuations instantly.
+                  ProfMobil AI memberikan inspeksi mobil yang akurat dan komprehensif didukung oleh kecerdasan buatan canggih. Dapatkan laporan terperinci, prediksi kerusakan, dan penilaian pasar secara instan.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-3">
                   <Button size="lg" className="bg-automotive-600 hover:bg-automotive-700 text-white">
-                    Schedule an Inspection
+                    Jadwalkan Inspeksi
                   </Button>
                   <Button size="lg" variant="outline" className="border-automotive-600 text-automotive-600 hover:bg-automotive-50">
-                    <Search className="mr-2 h-4 w-4" /> Learn More
+                    <Search className="mr-2 h-4 w-4" /> Pelajari Lebih Lanjut
                   </Button>
                 </div>
                 
                 <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-automotive-600" />
-                    <span className="ml-2 text-sm text-gray-700">AI Precision</span>
+                    <span className="ml-2 text-sm text-gray-700">Presisi AI</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-automotive-600" />
-                    <span className="ml-2 text-sm text-gray-700">Instant Reports</span>
+                    <span className="ml-2 text-sm text-gray-700">Laporan Instan</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-automotive-600" />
-                    <span className="ml-2 text-sm text-gray-700">Market Valuation</span>
+                    <span className="ml-2 text-sm text-gray-700">Penilaian Pasar</span>
                   </div>
                 </div>
               </div>
@@ -48,7 +48,7 @@ const HeroSection = () => {
                 <div className="relative">
                   <div className="shadow-xl rounded-lg overflow-hidden border-4 border-white bg-white">
                     <div className="absolute top-2 left-2 bg-automotive-600 text-white text-xs font-bold px-2 py-1 rounded z-10">
-                      AI SCANNING
+                      PEMINDAIAN AI
                     </div>
                     <div className="bg-gradient-to-r from-automotive-500 to-tech-800 h-72 flex items-center justify-center">
                       <Car className="h-24 w-24 text-white animate-pulse" />

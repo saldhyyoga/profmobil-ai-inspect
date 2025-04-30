@@ -12,7 +12,7 @@ const Footer = () => {
               <span className="ml-2 text-xl font-bold">ProfMobil <span className="text-automotive-400">AI</span></span>
             </div>
             <p className="text-gray-400 mb-4">
-              Leading the future of car inspections with AI-powered technology.
+              Memimpin masa depan inspeksi mobil dengan teknologi bertenaga AI.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
@@ -39,29 +39,29 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Services</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Layanan</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">AI Car Inspection</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Digital Reports</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Market Valuation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Car Recommendations</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Inspeksi Mobil AI</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Laporan Digital</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Penilaian Pasar</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Rekomendasi Mobil</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Company</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Perusahaan</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Our Technology</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Contact</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Tentang Kami</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Teknologi Kami</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Karir</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Kontak</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Contact Us</h3>
-            <p className="text-gray-400 mb-2">123 Innovation Drive</p>
-            <p className="text-gray-400 mb-2">Tech City, TC 12345</p>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Hubungi Kami</h3>
+            <p className="text-gray-400 mb-2">Jl. Inovasi 123</p>
+            <p className="text-gray-400 mb-2">Kota Teknologi, KT 12345</p>
             <p className="text-gray-400 mb-2">info@profmobilai.com</p>
             <p className="text-gray-400">(123) 456-7890</p>
           </div>
@@ -70,13 +70,13 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} ProfMobil AI. All rights reserved.
+              &copy; {new Date().getFullYear()} ProfMobil AI. Hak Cipta Dilindungi.
             </p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Cookie Policy</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Kebijakan Privasi</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Syarat Layanan</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Kebijakan Cookie</a></li>
               </ul>
             </div>
           </div>

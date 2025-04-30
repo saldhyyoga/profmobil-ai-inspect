@@ -10,52 +10,52 @@ const HowItWorksSection = () => {
     {
       id: 1,
       icon: <Car className="h-6 w-6" />,
-      title: "Inspection Order",
-      description: "Select your preferred location and schedule. Input your car details and confirm booking.",
+      title: "Pemesanan Inspeksi",
+      description: "Pilih lokasi dan jadwal yang Anda inginkan. Masukkan detail mobil Anda dan konfirmasikan pemesanan.",
       subItems: [
-        { id: 1, text: "Choose inspection location & schedule" },
-        { id: 2, text: "Enter car details (make, year, etc.)" },
-        { id: 3, text: "Select payment method" },
-        { id: 4, text: "Optional: Choose between on-site or remote inspection" }
+        { id: 1, text: "Pilih lokasi & jadwal inspeksi" },
+        { id: 2, text: "Masukkan detail mobil (merek, tahun, dll.)" },
+        { id: 3, text: "Pilih metode pembayaran" },
+        { id: 4, text: "Opsional: Pilih antara inspeksi di tempat atau jarak jauh" }
       ]
     },
     {
       id: 2,
       icon: <Search className="h-6 w-6" />,
-      title: "Field Inspection",
-      description: "Our professional inspector conducts a thorough examination of your vehicle.",
+      title: "Inspeksi Lapangan",
+      description: "Inspektor profesional kami melakukan pemeriksaan menyeluruh terhadap kendaraan Anda.",
       subItems: [
-        { id: 1, text: "Physical inspection by certified inspector" },
-        { id: 2, text: "Digital documentation via mobile app" },
-        { id: 3, text: "Comprehensive checklist verification" },
-        { id: 4, text: "Photo and video documentation" },
-        { id: 5, text: "OBD scan and engine sound analysis" }
+        { id: 1, text: "Inspeksi fisik oleh inspektor bersertifikat" },
+        { id: 2, text: "Dokumentasi digital melalui aplikasi mobile" },
+        { id: 3, text: "Verifikasi daftar periksa komprehensif" },
+        { id: 4, text: "Dokumentasi foto dan video" },
+        { id: 5, text: "Pemindaian OBD dan analisis suara mesin" }
       ]
     },
     {
       id: 3,
       icon: <FileText className="h-6 w-6" />,
-      title: "AI Analysis",
-      description: "Our advanced AI processes the inspection data for accurate evaluation.",
+      title: "Analisis AI",
+      description: "AI canggih kami memproses data inspeksi untuk evaluasi yang akurat.",
       subItems: [
-        { id: 1, text: "AI data processing and analysis" },
-        { id: 2, text: "Comparison with extensive database" },
-        { id: 3, text: "Car condition score calculation" },
-        { id: 4, text: "Damage detection and assessment" },
-        { id: 5, text: "Repair cost estimation" }
+        { id: 1, text: "Pemrosesan dan analisis data AI" },
+        { id: 2, text: "Perbandingan dengan database yang luas" },
+        { id: 3, text: "Perhitungan skor kondisi mobil" },
+        { id: 4, text: "Deteksi dan penilaian kerusakan" },
+        { id: 5, text: "Estimasi biaya perbaikan" }
       ]
     },
     {
       id: 4,
       icon: <Check className="h-6 w-6" />,
-      title: "Detailed Report",
-      description: "Receive a comprehensive report with AI-powered insights.",
+      title: "Laporan Terperinci",
+      description: "Terima laporan komprehensif dengan wawasan bertenaga AI.",
       subItems: [
-        { id: 1, text: "AI diagnosis summary" },
-        { id: 2, text: "Complete inspection checklist" },
-        { id: 3, text: "Market value assessment" },
-        { id: 4, text: "Purchase recommendations" },
-        { id: 5, text: "ProfMobil Certification (if eligible)" }
+        { id: 1, text: "Ringkasan diagnosis AI" },
+        { id: 2, text: "Daftar periksa inspeksi lengkap" },
+        { id: 3, text: "Penilaian nilai pasar" },
+        { id: 4, text: "Rekomendasi pembelian" },
+        { id: 5, text: "Sertifikasi ProfMobil (jika memenuhi syarat)" }
       ]
     }
   ];
@@ -65,10 +65,10 @@ const HowItWorksSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            How ProfMobil AI Works
+            Cara Kerja ProfMobil AI
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            Our streamlined process ensures accurate and comprehensive vehicle inspections
+            Proses kami yang efisien memastikan inspeksi kendaraan yang akurat dan komprehensif
           </p>
         </div>
 

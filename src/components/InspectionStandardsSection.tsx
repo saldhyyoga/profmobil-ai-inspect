@@ -30,23 +30,23 @@ const InspectionStandardsSection = () => {
   const standards = [
     {
       icon: <Car className="h-5 w-5" />,
-      title: "Exterior",
-      description: "Analysis of body panels, paint, and frame structure for the detection of collision marks, rust, or dents."
+      title: "Eksterior",
+      description: "Analisis panel bodi, cat, dan struktur rangka untuk mendeteksi tanda-tanda tabrakan, karat, atau penyok."
     },
     {
       icon: <Wrench className="h-5 w-5" />,
       title: "Interior",
-      description: "Comprehensive cabin inspection - trim, dashboard, electronic features, and indications of flood damage or hidden damage."
+      description: "Inspeksi kabin menyeluruh - trim, dasbor, fitur elektronik, dan indikasi kerusakan akibat banjir atau kerusakan tersembunyi."
     },
     {
       icon: <Cog className="h-5 w-5" />,
-      title: "Engine & Transmission",
-      description: "Evaluation of mechanical components - engine, transmission, brakes, suspension."
+      title: "Mesin & Transmisi",
+      description: "Evaluasi komponen mekanis - mesin, transmisi, rem, suspensi."
     },
     {
       icon: <FileText className="h-5 w-5" />,
-      title: "Documents & History",
-      description: "Verification of document completeness, service history, and vehicle data."
+      title: "Dokumen & Riwayat",
+      description: "Verifikasi kelengkapan dokumen, riwayat servis, dan data kendaraan."
     }
   ];
 
@@ -55,10 +55,10 @@ const InspectionStandardsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            ProfMobil AI Inspection Standards
+            Standar Inspeksi ProfMobil AI
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            150+ Inspection Points with Artificial Intelligence for Complete & Accurate Results
+            150+ Poin Inspeksi dengan Kecerdasan Buatan untuk Hasil yang Lengkap & Akurat
           </p>
           <div className="flex justify-center mt-6">
             <Separator className="w-24 bg-automotive-600 h-1 rounded-full" />
