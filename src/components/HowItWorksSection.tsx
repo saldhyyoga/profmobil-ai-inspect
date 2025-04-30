@@ -1,7 +1,8 @@
 
 import { useState } from "react";
-import { Car, Search, FileText, Check } from "lucide-react";
+import { Car, Search, FileText, Check, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const HowItWorksSection = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -61,10 +62,13 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-16 bg-white">
+    <section id="how-it-works" className="py-16 bg-gradient-to-tr from-gray-100 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <span className="bg-automotive-100 text-automotive-700 text-sm font-semibold px-3 py-1 rounded-full">
+            Proses Inspeksi
+          </span>
+          <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">
             Cara Kerja ProfMobil AI
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
@@ -72,60 +76,113 @@ const HowItWorksSection = () => {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step) => (
-            <div 
-              key={step.id}
-              className={cn(
-                "relative cursor-pointer transition-all duration-300 border rounded-xl p-6",
-                activeStep === step.id 
-                  ? "border-automotive-600 bg-automotive-50 shadow-md" 
-                  : "border-gray-200 bg-white hover:border-automotive-300"
-              )}
-              onClick={() => setActiveStep(step.id)}
-            >
-              <div className="absolute -top-4 left-6 w-8 h-8 rounded-full bg-white flex items-center justify-center border border-gray-200 shadow-sm">
-                <div className={cn(
-                  "rounded-full w-8 h-8 flex items-center justify-center",
-                  activeStep === step.id ? "bg-automotive-600 text-white" : "bg-gray-100 text-gray-600"
-                )}>
-                  <span className="text-sm font-semibold">
-                    {step.id}
-                  </span>
-                </div>
+        <div className="relative">
+          {/* Timeline connector */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-automotive-200 z-0 hidden lg:block">
+            {steps.map((step, idx) => (
+              <div 
+                key={`dot-${idx}`} 
+                className={cn(
+                  "absolute w-5 h-5 rounded-full transform -translate-x-1/2",
+                  activeStep >= step.id ? "bg-automotive-600" : "bg-gray-300",
+                )}
+                style={{ top: `${(idx * 100) / (steps.length - 1)}%` }}
+              />
+            ))}
+          </div>
+
+          {/* Steps */}
+          <div className="relative z-10 space-y-16">
+            {steps.map((step, index) => (
+              <div 
+                key={step.id}
+                className={cn(
+                  "lg:grid lg:grid-cols-2 lg:gap-8 items-center cursor-pointer hover:opacity-100",
+                  activeStep === step.id ? "opacity-100" : "opacity-70"
+                )}
+                onClick={() => setActiveStep(step.id)}
+              >
+                {/* Step content positioning based on odd/even */}
+                {index % 2 === 0 ? (
+                  <>
+                    <StepContent step={step} isActive={activeStep === step.id} />
+                    <StepVisual step={step} isActive={activeStep === step.id} />
+                  </>
+                ) : (
+                  <>
+                    <StepVisual step={step} isActive={activeStep === step.id} className="hidden lg:block" />
+                    <StepContent step={step} isActive={activeStep === step.id} />
+                    <StepVisual step={step} isActive={activeStep === step.id} className="block lg:hidden mt-6" />
+                  </>
+                )}
               </div>
-              
-              <div className="flex flex-col items-center text-center mb-4">
-                <div className={cn(
-                  "rounded-full w-16 h-16 flex items-center justify-center mb-4",
-                  activeStep === step.id ? "bg-automotive-600 text-white" : "bg-gray-100 text-gray-600"
-                )}>
-                  {step.icon}
-                </div>
-                
-                <h3 className="text-xl font-medium text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600 mb-4">{step.description}</p>
-              </div>
-              
-              <div className={cn(
-                "space-y-2 bg-white p-4 rounded-lg",
-                activeStep === step.id ? "border border-gray-200" : ""
-              )}>
-                {step.subItems.map((item) => (
-                  <div key={item.id} className="flex items-start">
-                    <div className="min-w-6 h-6 rounded-full bg-automotive-100 text-automotive-600 flex items-center justify-center mr-2 text-xs font-semibold">
-                      {item.id}
-                    </div>
-                    <p className="text-sm text-gray-700">{item.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <Button 
+            className="bg-automotive-600 hover:bg-automotive-700 shadow-lg shadow-automotive-200/50"
+            onClick={() => window.location.href="#standards"}
+          >
+            Lihat Standar Inspeksi <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>
   );
 };
+
+const StepContent = ({ step, isActive }: { step: any, isActive: boolean }) => (
+  <div className={cn(
+    "p-6 transition-all duration-300",
+    isActive ? "bg-white rounded-xl shadow-lg border border-gray-100" : ""
+  )}>
+    <div className="flex items-center mb-4">
+      <div className={cn(
+        "w-10 h-10 rounded-full flex items-center justify-center mr-3",
+        isActive ? "bg-automotive-600 text-white" : "bg-gray-200 text-gray-700"
+      )}>
+        {step.id}
+      </div>
+      <h3 className="text-2xl font-bold text-gray-900">{step.title}</h3>
+    </div>
+    <p className="text-gray-600 mb-6">{step.description}</p>
+    <div className="space-y-3">
+      {step.subItems.map((item: any) => (
+        <div key={item.id} className="flex items-start">
+          <div className={cn(
+            "w-6 h-6 rounded-full flex items-center justify-center mr-2 flex-shrink-0 mt-0.5",
+            isActive ? "bg-automotive-100 text-automotive-700" : "bg-gray-100 text-gray-600"
+          )}>
+            <span className="text-xs">{item.id}</span>
+          </div>
+          <p className="text-gray-700">{item.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const StepVisual = ({ step, isActive, className = "" }: { step: any, isActive: boolean, className?: string }) => (
+  <div className={cn("flex justify-center", className)}>
+    <div className={cn(
+      "w-48 h-48 rounded-full flex items-center justify-center transition-all duration-300",
+      isActive 
+        ? "bg-gradient-to-br from-automotive-500 to-automotive-700 text-white shadow-xl" 
+        : "bg-gray-100 text-gray-500"
+    )}>
+      <div className="text-center">
+        <div className="flex justify-center mb-2">
+          {React.cloneElement(step.icon, { 
+            size: 40,
+            className: isActive ? "text-white" : "text-gray-600"
+          })}
+        </div>
+        <p className="font-semibold">{step.title}</p>
+      </div>
+    </div>
+  </div>
+);
 
 export default HowItWorksSection;
