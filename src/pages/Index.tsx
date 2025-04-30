@@ -18,8 +18,12 @@ const Index = () => {
         <FeaturesSection />
         <HowItWorksSection />
         <InspectionStandardsSection />
+        {/* Kalkulator Nilai Mobil section temporarily commented out
         <CarValueCalculator />
+        */}
+        {/* Rekomendasi Mobil section temporarily commented out
         <RecommendationSection />
+        */}
       </main>
       <Footer />
     </div>
