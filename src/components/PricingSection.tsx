@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Check, CircleCheck, Tag } from "lucide-react";
+import { Check, CircleCheck, Tag, Percent } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 
 interface PricingFeature {
@@ -11,20 +11,24 @@ interface PricingFeature {
 
 interface PricingTierProps {
   title: string;
+  normalPrice: string;
   price: string;
   description: string;
   features: PricingFeature[];
   popular?: boolean;
   ctaText?: string;
+  discountPercent?: number;
 }
 
 const PricingTier: React.FC<PricingTierProps> = ({
   title,
+  normalPrice,
   price,
   description,
   features,
   popular = false,
   ctaText = "Pilih Paket",
+  discountPercent,
 }) => {
   return (
     <Card className={`relative h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg ${
@@ -37,14 +41,30 @@ const PricingTier: React.FC<PricingTierProps> = ({
           </div>
         </div>
       )}
+      {discountPercent && (
+        <div className="absolute top-4 left-4">
+          <div className="bg-red-500 text-white px-2 py-1 rounded-full font-medium text-sm flex items-center">
+            <Percent size={14} className="mr-1" />
+            {discountPercent}% OFF
+          </div>
+        </div>
+      )}
       <CardHeader className="pb-0">
         <div className="flex items-baseline gap-2 mb-2">
           <h3 className="text-2xl font-bold">{title}</h3>
           {popular && <Tag size={18} className="text-automotive-600" />}
         </div>
-        <div className="flex items-baseline mb-4">
-          <span className="text-4xl font-extrabold text-automotive-600">{price}</span>
-          <span className="ml-1 text-gray-500">/inspeksi</span>
+        <div className="flex flex-col mb-4">
+          <div className="flex items-baseline">
+            <span className="text-4xl font-extrabold text-automotive-600">{price}</span>
+            <span className="ml-1 text-gray-500">/inspeksi</span>
+          </div>
+          {normalPrice && (
+            <div className="flex items-baseline mt-1">
+              <span className="text-gray-500 line-through text-lg">{normalPrice}</span>
+              <span className="ml-1 text-gray-400 text-sm">/inspeksi</span>
+            </div>
+          )}
         </div>
         <p className="text-gray-500">{description}</p>
       </CardHeader>
@@ -79,9 +99,11 @@ const PricingSection = () => {
   const pricingTiers = [
     {
       title: "Basic",
+      normalPrice: "Rp 350.000",
       price: "Rp 275.000",
       description: "Cocok untuk city car dan sedan kecil",
       popular: false,
+      discountPercent: 21,
       features: [
         { title: "Inspeksi mesin standar", included: true },
         { title: "Cek kondisi bodi", included: true },
@@ -95,9 +117,11 @@ const PricingSection = () => {
     },
     {
       title: "Standard",
+      normalPrice: "Rp 450.000",
       price: "Rp 325.000",
       description: "Cocok untuk sedan besar dan SUV",
       popular: true,
+      discountPercent: 28,
       features: [
         { title: "Inspeksi mesin mendalam", included: true },
         { title: "Cek kondisi bodi & cat", included: true },
@@ -111,9 +135,11 @@ const PricingSection = () => {
     },
     {
       title: "Premium",
+      normalPrice: "Rp 500.000",
       price: "Rp 375.000",
       description: "Cocok untuk mobil mewah dan Eropa",
       popular: false,
+      discountPercent: 25,
       features: [
         { title: "Inspeksi mesin komprehensif", included: true },
         { title: "Cek kondisi bodi & cat detail", included: true },
@@ -137,6 +163,11 @@ const PricingSection = () => {
           <p className="max-w-3xl text-xl text-gray-500 mx-auto">
             Kami menyediakan paket inspeksi yang sesuai dengan kebutuhan dan jenis kendaraan Anda
           </p>
+          <div className="mt-4 inline-flex items-center bg-amber-50 text-amber-800 px-4 py-2 rounded-md border border-amber-200">
+            <Tag size={18} className="mr-2 text-amber-600" />
+            <span className="font-medium">Promo Spesial!</span> 
+            <span className="ml-2">Diskon hingga 28% untuk semua paket inspeksi</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-10">
@@ -144,11 +175,13 @@ const PricingSection = () => {
             <PricingTier
               key={index}
               title={tier.title}
+              normalPrice={tier.normalPrice}
               price={tier.price}
               description={tier.description}
               features={tier.features}
               popular={tier.popular}
               ctaText={tier.ctaText}
+              discountPercent={tier.discountPercent}
             />
           ))}
         </div>
