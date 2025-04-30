@@ -7,6 +7,7 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 import InspectionStandardsSection from '@/components/InspectionStandardsSection';
 import CarValueCalculator from '@/components/CarValueCalculator';
 import RecommendationSection from '@/components/RecommendationSection';
+import PricingSection from '@/components/PricingSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         <FeaturesSection />
         <HowItWorksSection />
         <InspectionStandardsSection />
+        <PricingSection />
         {/* Kalkulator Nilai Mobil section temporarily commented out
         <CarValueCalculator />
         */}
