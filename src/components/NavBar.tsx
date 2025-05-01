@@ -57,7 +57,7 @@ const NavBar: React.FC = () => {
                         <ListItem href="/surat-perjanjian-digital" title="Surat Perjanjian Digital">
                           Buat dan kelola surat perjanjian jual beli secara digital dan aman.
                         </ListItem>
-                        <ListItem href="#" title="Mediator Transaksi by Inspector (Manual)">
+                        <ListItem href="/mediator-transaksi" title="Mediator Transaksi by Inspector (Manual)">
                           Dapatkan bantuan mediator langsung dari inspector kami yang berpengalaman.
                         </ListItem>
                         <ListItem href="#" title="Mediator Transaksi by System (Coming Soon)">
@@ -133,7 +133,7 @@ const NavBar: React.FC = () => {
             <MobileNavItem title="Fitur" items={[
               { title: "Inspeksi Mobil + AI", href: "/inspeksi-mobil-ai" },
               { title: "Surat Perjanjian Digital", href: "/surat-perjanjian-digital" },
-              { title: "Mediator Transaksi by Inspector (Manual)", href: "#" },
+              { title: "Mediator Transaksi by Inspector (Manual)", href: "/mediator-transaksi" },
               { title: "Mediator Transaksi by System (Coming Soon)", href: "#" },
               { title: "Kalkulasi Harga Pasar", href: "#" },
             ]} />
