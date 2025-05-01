@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { ShieldCheck, HandHeart, Robot, ChartBar, Compare, Flag } from 'lucide-react';
+import { ShieldCheck, HandHeart, Bot, ChartBar, LineChart, Flag } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const WhyChooseUsSection: React.FC = () => {
   return (
@@ -71,7 +72,7 @@ const WhyChooseUsSection: React.FC = () => {
             <div className="p-1 bg-gradient-to-r from-teal-400 to-green-500" />
             <div className="p-6">
               <div className="bg-teal-100 p-3 inline-flex rounded-lg mb-4">
-                <Robot className="h-6 w-6 text-teal-600" />
+                <Bot className="h-6 w-6 text-teal-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Kami Gunakan AI, Bukan Cuma "Feeling"</h3>
               <p className="text-gray-600 mb-4">
@@ -102,7 +103,7 @@ const WhyChooseUsSection: React.FC = () => {
             <div className="p-1 bg-gradient-to-r from-green-400 to-yellow-500" />
             <div className="p-6">
               <div className="bg-green-100 p-3 inline-flex rounded-lg mb-4">
-                <Compare className="h-6 w-6 text-green-600" />
+                <LineChart className="h-6 w-6 text-green-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Bandingkan Mobil, Pilih yang Terbaik</h3>
               <p className="text-gray-600 mb-4">
