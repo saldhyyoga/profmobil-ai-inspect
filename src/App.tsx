@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import InspeksiMobilAiPage from "./pages/InspeksiMobilAi";
 import SuratPerjanjianDigitalPage from "./pages/SuratPerjanjianDigital";
 import MediatorTransaksi from "./pages/MediatorTransaksi";
+import InspeksiStandarDetail from "./pages/InspeksiStandarDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,8 @@ const App = () => (
           <Route path="/inspeksi-mobil-ai" element={<InspeksiMobilAiPage />} />
           <Route path="/surat-perjanjian-digital" element={<SuratPerjanjianDigitalPage />} />
           <Route path="/mediator-transaksi" element={<MediatorTransaksi />} />
+          <Route path="/standar-inspeksi" element={<InspeksiStandarDetail />} />
+          <Route path="/standar-inspeksi/:category" element={<InspeksiStandarDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -4,15 +4,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Car, FileText, Wrench, Cog, ShieldCheck, Check } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 interface StandardCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   index: number;
+  linkTo: string;
 }
 
-const StandardCard = ({ icon, title, description, index }: StandardCardProps) => {
+const StandardCard = ({ icon, title, description, index, linkTo }: StandardCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   
   // Different gradient backgrounds for each card
@@ -24,50 +26,52 @@ const StandardCard = ({ icon, title, description, index }: StandardCardProps) =>
   ];
 
   return (
-    <Card 
-      className={cn(
-        "h-full transition-all duration-300 overflow-hidden relative group",
-        isHovered ? "shadow-xl transform -translate-y-1" : "shadow-md",
-        gradients[index % gradients.length]
-      )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mt-12 -mr-12"></div>
-      <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full -mb-8 -ml-8"></div>
-      
-      <CardHeader className="flex flex-row items-center gap-4 pb-2 relative z-10">
-        <div className={cn(
-          "rounded-full p-4 transition-all duration-300",
-          isHovered 
-            ? "bg-automotive-600 text-white" 
-            : "bg-white text-automotive-600"
-        )}>
-          {React.cloneElement(icon as React.ReactElement, { className: "h-8 w-8" })}
-        </div>
-        <CardTitle className="text-xl">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="relative z-10">
-        <CardDescription className="text-gray-700 text-sm leading-relaxed">
-          {description}
-        </CardDescription>
+    <Link to={linkTo}>
+      <Card 
+        className={cn(
+          "h-full transition-all duration-300 overflow-hidden relative group",
+          isHovered ? "shadow-xl transform -translate-y-1" : "shadow-md",
+          gradients[index % gradients.length]
+        )}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mt-12 -mr-12"></div>
+        <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full -mb-8 -ml-8"></div>
         
+        <CardHeader className="flex flex-row items-center gap-4 pb-2 relative z-10">
+          <div className={cn(
+            "rounded-full p-4 transition-all duration-300",
+            isHovered 
+              ? "bg-automotive-600 text-white" 
+              : "bg-white text-automotive-600"
+          )}>
+            {React.cloneElement(icon as React.ReactElement, { className: "h-8 w-8" })}
+          </div>
+          <CardTitle className="text-xl">{title}</CardTitle>
+        </CardHeader>
+        <CardContent className="relative z-10">
+          <CardDescription className="text-gray-700 text-sm leading-relaxed">
+            {description}
+          </CardDescription>
+          
+          <div className={cn(
+            "mt-4 flex items-center text-automotive-600 font-medium transition-all",
+            isHovered ? "opacity-100" : "opacity-0"
+          )}>
+            <span>Lihat Detail</span>
+            <Check className="ml-2 h-4 w-4" />
+          </div>
+        </CardContent>
+        
+        {/* Bottom accent bar */}
         <div className={cn(
-          "mt-4 flex items-center text-automotive-600 font-medium transition-all",
-          isHovered ? "opacity-100" : "opacity-0"
-        )}>
-          <span>Lihat Detail</span>
-          <Check className="ml-2 h-4 w-4" />
-        </div>
-      </CardContent>
-      
-      {/* Bottom accent bar */}
-      <div className={cn(
-        "h-1 w-full bg-automotive-600 absolute bottom-0 left-0 transition-all duration-300",
-        isHovered ? "opacity-100" : "opacity-50"
-      )}></div>
-    </Card>
+          "h-1 w-full bg-automotive-600 absolute bottom-0 left-0 transition-all duration-300",
+          isHovered ? "opacity-100" : "opacity-50"
+        )}></div>
+      </Card>
+    </Link>
   );
 };
 
@@ -76,22 +80,26 @@ const InspectionStandardsSection = () => {
     {
       icon: <Car className="h-5 w-5" />,
       title: "Eksterior",
-      description: "Analisis panel bodi, cat, dan struktur rangka untuk mendeteksi tanda-tanda tabrakan, karat, atau penyok."
+      description: "Analisis panel bodi, cat, dan struktur rangka untuk mendeteksi tanda-tanda tabrakan, karat, atau penyok.",
+      linkTo: "/standar-inspeksi/eksterior"
     },
     {
       icon: <Wrench className="h-5 w-5" />,
       title: "Interior",
-      description: "Inspeksi kabin menyeluruh - trim, dasbor, fitur elektronik, dan indikasi kerusakan akibat banjir atau kerusakan tersembunyi."
+      description: "Inspeksi kabin menyeluruh - trim, dasbor, fitur elektronik, dan indikasi kerusakan akibat banjir atau kerusakan tersembunyi.",
+      linkTo: "/standar-inspeksi/interior"
     },
     {
       icon: <Cog className="h-5 w-5" />,
       title: "Mesin & Transmisi",
-      description: "Evaluasi komponen mekanis - mesin, transmisi, rem, suspensi."
+      description: "Evaluasi komponen mekanis - mesin, transmisi, rem, suspensi.",
+      linkTo: "/standar-inspeksi/mesin"
     },
     {
       icon: <FileText className="h-5 w-5" />,
       title: "Dokumen & Riwayat",
-      description: "Verifikasi kelengkapan dokumen, riwayat servis, dan data kendaraan."
+      description: "Verifikasi kelengkapan dokumen, riwayat servis, dan data kendaraan.",
+      linkTo: "/standar-inspeksi/dokumen"
     }
   ];
 
@@ -133,6 +141,7 @@ const InspectionStandardsSection = () => {
               title={standard.title}
               description={standard.description}
               index={index}
+              linkTo={standard.linkTo}
             />
           ))}
         </div>

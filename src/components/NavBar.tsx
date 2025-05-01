@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Car, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -76,7 +75,7 @@ const NavBar: React.FC = () => {
                         <ListItem href="#how-it-works" title="Cara Kerja ProfMobil AI">
                           Pelajari bagaimana ProfMobil AI membantu Anda mendapatkan mobil bekas berkualitas.
                         </ListItem>
-                        <ListItem href="#inspection-standards" title="Standar Inspeksi">
+                        <ListItem href="/standar-inspeksi" title="Standar Inspeksi">
                           Ketahui standar inspeksi yang kami terapkan untuk memastikan kualitas mobil.
                         </ListItem>
                       </ul>
@@ -139,7 +138,7 @@ const NavBar: React.FC = () => {
             ]} />
             <MobileNavItem title="Cara Kerja" items={[
               { title: "Cara Kerja ProfMobil AI", href: "#how-it-works" },
-              { title: "Standar Inspeksi", href: "#inspection-standards" },
+              { title: "Standar Inspeksi", href: "/standar-inspeksi" },
             ]} />
             <MobileNavItem title="Tentang Kami" items={[
               { title: "Kenapa Harus Menggunakan ProfMobil AI", href: "#why-choose-us" },
