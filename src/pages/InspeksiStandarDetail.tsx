@@ -1,18 +1,15 @@
 
-import React, { useEffect } from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { ArrowLeft, Car, Wrench, Cog, FileText, Shield, CheckCircle } from "lucide-react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Card, CardContent } from "@/components/ui/card";
 
 export default function InspeksiStandarDetail() {
-  const { category } = useParams();
-  
   // Scroll to top when the component mounts
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
@@ -164,155 +161,115 @@ export default function InspeksiStandarDetail() {
     }
   };
 
-  // Check if category exists
-  if (category && !inspectionCategories[category as keyof typeof inspectionCategories]) {
-    return <Navigate to="/standar-inspeksi" />;
-  }
-
-  // If no category is provided, show the overview page
-  if (!category) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <NavBar />
-        <main className="flex-grow py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-12 text-center">
-              <Link to="/" className="inline-flex items-center text-automotive-600 hover:text-automotive-700 mb-6">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Kembali ke Beranda
-              </Link>
-              <div className="inline-flex items-center justify-center bg-automotive-100 text-automotive-700 rounded-full px-4 py-1 text-sm font-semibold mb-4">
-                <Shield className="h-4 w-4 mr-2" />
-                Standar Kualitas
-              </div>
-              <h1 className="text-4xl font-bold text-gray-900 mt-4">Standar Inspeksi ProfMobil AI</h1>
-              <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-                150+ Poin Inspeksi dengan Dukungan Kecerdasan Buatan untuk Hasil yang Lengkap, Akurat, dan Transparan
-              </p>
-            </div>
-
-            <div className="mb-12 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Di ProfMobil AI, setiap mobil diperiksa melalui proses evaluasi menyeluruh yang menggabungkan keahlian inspektor bersertifikasi dengan kecanggihan teknologi AI. Kami berkomitmen menghadirkan kendaraan bekas yang aman, andal, dan bebas dari potensi risiko tersembunyi.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {Object.entries(inspectionCategories).map(([key, category]) => (
-                <Link to={`/standar-inspeksi/${key}`} key={key} className="block h-full">
-                  <Card className={`h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden relative ${category.color}`}>
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mt-12 -mr-12"></div>
-                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full -mb-8 -ml-8"></div>
-                    
-                    <CardContent className="p-6 relative z-10">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className="rounded-full bg-white p-4 text-automotive-600 shadow-sm">
-                          {category.icon}
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold mb-1">{category.title}</h3>
-                          <p className="text-gray-700">{category.description}</p>
-                        </div>
-                      </div>
-                      <ul className="space-y-2 mb-6">
-                        {category.items.slice(0, 3).map((item, index) => (
-                          <li key={index} className="flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4 text-automotive-600 flex-shrink-0" />
-                            <span className="text-sm">{item.title}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="mt-4 flex items-center text-automotive-600 font-medium">
-                        <span>Lihat Detail</span>
-                        <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />
-                      </div>
-                    </CardContent>
-                    
-                    <div className="h-1 w-full bg-automotive-600 absolute bottom-0 left-0"></div>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-
-            <div className="p-8 border border-automotive-200 rounded-xl bg-gradient-to-br from-gray-50 to-automotive-50 shadow-inner text-center">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-6">Kepercayaan Adalah Prioritas Kami</h3>
-              <p className="text-gray-700 max-w-3xl mx-auto mb-6">
-                Setiap inspeksi kami dilakukan secara teliti dan cermat untuk memastikan bahwa Anda mendapatkan informasi yang akurat dan transparan tentang kondisi mobil yang Anda minati. Transparansi adalah kunci utama layanan kami.
-              </p>
-              <Button 
-                className="bg-automotive-600 hover:bg-automotive-700"
-                onClick={() => window.location.href="/inspeksi-mobil-ai"}
-              >
-                Jadwalkan Inspeksi Sekarang
-              </Button>
-            </div>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  // Specific category details
-  const categoryData = inspectionCategories[category as keyof typeof inspectionCategories];
-
   return (
     <div className="min-h-screen flex flex-col">
       <NavBar />
       <main className="flex-grow py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-              <Link to="/standar-inspeksi" className="inline-flex items-center text-automotive-600 hover:text-automotive-700">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Kembali ke Standar Inspeksi
-              </Link>
-              <Button variant="outline" onClick={() => window.location.href="/inspeksi-mobil-ai"}>
-                Jadwalkan Inspeksi
-              </Button>
+          <div className="mb-12 text-center">
+            <Link to="/" className="inline-flex items-center text-automotive-600 hover:text-automotive-700 mb-6">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Kembali ke Beranda
+            </Link>
+            <div className="inline-flex items-center justify-center bg-automotive-100 text-automotive-700 rounded-full px-4 py-1 text-sm font-semibold mb-4">
+              <Shield className="h-4 w-4 mr-2" />
+              Standar Kualitas
             </div>
-            
-            <div className={`p-8 rounded-2xl mb-8 ${categoryData.color}`}>
-              <div className="flex flex-col md:flex-row md:items-center gap-6">
-                <div className="bg-white rounded-full p-5 shadow-md w-20 h-20 flex items-center justify-center">
-                  {categoryData.icon}
-                </div>
-                <div>
-                  <h1 className="text-3xl font-bold text-gray-900">{categoryData.title}</h1>
-                  <p className="text-xl text-gray-700 mt-2">{categoryData.description}</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-              <div className="grid gap-8">
-                {categoryData.items.map((item, index) => (
-                  <div key={index}>
-                    <div className="flex items-start gap-4">
-                      <div className="bg-automotive-100 rounded-full p-2 text-automotive-700 font-semibold w-8 h-8 flex items-center justify-center mt-1">
-                        {index + 1}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg">{item.title}</h3>
-                        <p className="text-gray-700 mt-1">{item.description}</p>
-                      </div>
-                    </div>
-                    {index < categoryData.items.length - 1 && <Separator className="mt-6" />}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <h1 className="text-4xl font-bold text-gray-900 mt-4">Standar Inspeksi ProfMobil AI</h1>
+            <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+              150+ Poin Inspeksi dengan Dukungan Kecerdasan Buatan untuk Hasil yang Lengkap, Akurat, dan Transparan
+            </p>
+          </div>
 
-            <div className="bg-gradient-to-br from-automotive-600 to-automotive-700 text-white p-8 rounded-2xl shadow-xl">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Ingin mendapatkan hasil inspeksi yang komprehensif?</h3>
-                  <p className="text-automotive-100">Jadwalkan inspeksi mobil Anda sekarang dan dapatkan laporan lengkap dari tim kami.</p>
+          <div className="mb-12 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Di ProfMobil AI, setiap mobil diperiksa melalui proses evaluasi menyeluruh yang menggabungkan keahlian inspektor bersertifikasi dengan kecanggihan teknologi AI. Kami berkomitmen menghadirkan kendaraan bekas yang aman, andal, dan bebas dari potensi risiko tersembunyi.
+            </p>
+          </div>
+
+          {/* Standards statistics */}
+          <div className="mt-16 p-8 border border-automotive-200 rounded-xl bg-gradient-to-br from-gray-50 to-automotive-50 shadow-inner mb-12">
+            <h3 className="text-2xl font-semibold text-center text-gray-800 mb-6">Standar Tinggi, Hasil Terpercaya</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-automotive-100 text-automotive-600 mb-4">
+                  <span className="text-2xl font-bold">150+</span>
                 </div>
-                <Button size="lg" className="bg-white hover:bg-gray-100 text-automotive-700 whitespace-nowrap">
-                  Jadwalkan Sekarang
-                </Button>
+                <div className="text-2xl font-bold text-automotive-600 mb-2">Poin Inspeksi</div>
+                <p className="text-gray-600">Inspeksi menyeluruh dari eksterior hingga dokumen</p>
               </div>
+              <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-automotive-100 text-automotive-600 mb-4">
+                  <span className="text-2xl font-bold">98%</span>
+                </div>
+                <div className="text-2xl font-bold text-automotive-600 mb-2">Tingkat Akurasi</div>
+                <p className="text-gray-600">Dengan dukungan AI dan inspektor profesional</p>
+              </div>
+              <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-automotive-100 text-automotive-600 mb-4">
+                  <span className="text-2xl font-bold">5000+</span>
+                </div>
+                <div className="text-2xl font-bold text-automotive-600 mb-2">Inspeksi Sukses</div>
+                <p className="text-gray-600">Membantu ribuan konsumen membuat keputusan tepat</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Detailed inspection categories */}
+          {Object.entries(inspectionCategories).map(([id, category], categoryIndex) => (
+            <div key={id} className="mb-16" id={id}>
+              <div className={`p-8 rounded-2xl mb-8 ${category.color}`}>
+                <div className="flex flex-col md:flex-row md:items-center gap-6">
+                  <div className="bg-white rounded-full p-5 shadow-md w-20 h-20 flex items-center justify-center">
+                    {category.icon}
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold text-gray-900">{category.title}</h2>
+                    <p className="text-xl text-gray-700 mt-2">{category.description}</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 mb-8">
+                <div className="grid gap-8">
+                  {category.items.map((item, index) => (
+                    <div key={index}>
+                      <div className="flex items-start gap-4">
+                        <div className="bg-automotive-100 rounded-full p-2 text-automotive-700 font-semibold w-8 h-8 flex items-center justify-center mt-1">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-lg">{item.title}</h3>
+                          <p className="text-gray-700 mt-1">{item.description}</p>
+                        </div>
+                      </div>
+                      {index < category.items.length - 1 && <Separator className="mt-6" />}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Only add separator if not the last category */}
+              {categoryIndex < Object.entries(inspectionCategories).length - 1 && (
+                <div className="flex items-center justify-center my-16">
+                  <div className="w-16 h-1 bg-gray-200 rounded-full"></div>
+                  <div className="w-3 h-3 bg-automotive-500 rounded-full mx-3"></div>
+                  <div className="w-16 h-1 bg-gray-200 rounded-full"></div>
+                </div>
+              )}
+            </div>
+          ))}
+
+          {/* CTA Section */}
+          <div className="bg-gradient-to-br from-automotive-600 to-automotive-700 text-white p-8 rounded-2xl shadow-xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">Ingin mendapatkan hasil inspeksi yang komprehensif?</h3>
+                <p className="text-automotive-100">Jadwalkan inspeksi mobil Anda sekarang dan dapatkan laporan lengkap dari tim kami.</p>
+              </div>
+              <Button size="lg" className="bg-white hover:bg-gray-100 text-automotive-700 whitespace-nowrap" onClick={() => window.location.href="/inspeksi-mobil-ai"}>
+                Jadwalkan Sekarang
+              </Button>
             </div>
           </div>
         </div>

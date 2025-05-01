@@ -11,10 +11,10 @@ interface StandardCardProps {
   title: string;
   description: string;
   index: number;
-  linkTo: string;
+  sectionId: string;
 }
 
-const StandardCard = ({ icon, title, description, index, linkTo }: StandardCardProps) => {
+const StandardCard = ({ icon, title, description, index, sectionId }: StandardCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   
   // Different gradient backgrounds for each card
@@ -26,7 +26,7 @@ const StandardCard = ({ icon, title, description, index, linkTo }: StandardCardP
   ];
 
   return (
-    <Link to={linkTo}>
+    <Link to={`/standar-inspeksi#${sectionId}`}>
       <Card 
         className={cn(
           "h-full transition-all duration-300 overflow-hidden relative group",
@@ -81,25 +81,25 @@ const InspectionStandardsSection = () => {
       icon: <Car className="h-5 w-5" />,
       title: "Eksterior",
       description: "Analisis panel bodi, cat, dan struktur rangka untuk mendeteksi tanda-tanda tabrakan, karat, atau penyok.",
-      linkTo: "/standar-inspeksi/eksterior"
+      sectionId: "eksterior"
     },
     {
       icon: <Wrench className="h-5 w-5" />,
       title: "Interior",
       description: "Inspeksi kabin menyeluruh - trim, dasbor, fitur elektronik, dan indikasi kerusakan akibat banjir atau kerusakan tersembunyi.",
-      linkTo: "/standar-inspeksi/interior"
+      sectionId: "interior"
     },
     {
       icon: <Cog className="h-5 w-5" />,
       title: "Mesin & Transmisi",
       description: "Evaluasi komponen mekanis - mesin, transmisi, rem, suspensi.",
-      linkTo: "/standar-inspeksi/mesin"
+      sectionId: "mesin"
     },
     {
       icon: <FileText className="h-5 w-5" />,
       title: "Dokumen & Riwayat",
       description: "Verifikasi kelengkapan dokumen, riwayat servis, dan data kendaraan.",
-      linkTo: "/standar-inspeksi/dokumen"
+      sectionId: "dokumen"
     }
   ];
 
@@ -141,7 +141,7 @@ const InspectionStandardsSection = () => {
               title={standard.title}
               description={standard.description}
               index={index}
-              linkTo={standard.linkTo}
+              sectionId={standard.sectionId}
             />
           ))}
         </div>

@@ -29,7 +29,6 @@ const App = () => {
               <Route path="/surat-perjanjian-digital" element={<SuratPerjanjianDigitalPage />} />
               <Route path="/mediator-transaksi" element={<MediatorTransaksi />} />
               <Route path="/standar-inspeksi" element={<InspeksiStandarDetail />} />
-              <Route path="/standar-inspeksi/:category" element={<InspeksiStandarDetail />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
