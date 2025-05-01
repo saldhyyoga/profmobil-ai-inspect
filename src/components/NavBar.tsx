@@ -60,6 +60,9 @@ const NavBar: React.FC = () => {
                         <ListItem href="#" title="Mediator Transaksi by System (Coming Soon)">
                           Fitur mediasi otomatis oleh sistem kami akan segera hadir.
                         </ListItem>
+                        <ListItem href="#" title="Kalkulasi Harga Pasar">
+                          Dapatkan estimasi harga pasar untuk mobil bekas berdasarkan data terkini.
+                        </ListItem>
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -72,6 +75,19 @@ const NavBar: React.FC = () => {
                         </ListItem>
                         <ListItem href="#inspection-standards" title="Standar Inspeksi">
                           Ketahui standar inspeksi yang kami terapkan untuk memastikan kualitas mobil.
+                        </ListItem>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-gray-700 hover:text-automotive-600 text-sm font-medium">Tentang Kami</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-3 p-4">
+                        <ListItem href="#why-choose-us" title="Kenapa Harus Menggunakan ProfMobil AI">
+                          Temukan alasan mengapa ProfMobil AI adalah pilihan terbaik untuk transaksi mobil bekas Anda.
+                        </ListItem>
+                        <ListItem href="#about-us" title="Tentang ProfMobil AI">
+                          Ketahui lebih lanjut tentang visi, misi, dan tim di balik ProfMobil AI.
                         </ListItem>
                       </ul>
                     </NavigationMenuContent>
@@ -116,10 +132,15 @@ const NavBar: React.FC = () => {
               { title: "Surat Perjanjian Digital", href: "#" },
               { title: "Mediator Transaksi by Inspector (Manual)", href: "#" },
               { title: "Mediator Transaksi by System (Coming Soon)", href: "#" },
+              { title: "Kalkulasi Harga Pasar", href: "#" },
             ]} />
             <MobileNavItem title="Cara Kerja" items={[
               { title: "Cara Kerja ProfMobil AI", href: "#how-it-works" },
               { title: "Standar Inspeksi", href: "#inspection-standards" },
+            ]} />
+            <MobileNavItem title="Tentang Kami" items={[
+              { title: "Kenapa Harus Menggunakan ProfMobil AI", href: "#why-choose-us" },
+              { title: "Tentang ProfMobil AI", href: "#about-us" },
             ]} />
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Harga</a>
             <a href="#help-center" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Pusat Bantuan</a>
