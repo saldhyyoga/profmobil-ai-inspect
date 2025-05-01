@@ -1,7 +1,18 @@
 
 import React from "react";
-import { Car, Menu, X } from "lucide-react";
+import { Car, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
+import { cn } from "@/lib/utils";
 
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -16,10 +27,73 @@ const NavBar: React.FC = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-              <a href="#features" className="text-gray-700 hover:text-automotive-600 px-3 py-2 rounded-md text-sm font-medium">Fitur</a>
-              <a href="#how-it-works" className="text-gray-700 hover:text-automotive-600 px-3 py-2 rounded-md text-sm font-medium">Cara Kerja</a>
-              <a href="#why-choose-us" className="text-gray-700 hover:text-automotive-600 px-3 py-2 rounded-md text-sm font-medium">Mengapa Kami</a>
-              <a href="#pricing" className="text-gray-700 hover:text-automotive-600 px-3 py-2 rounded-md text-sm font-medium">Harga</a>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-gray-700 hover:text-automotive-600 text-sm font-medium">Fitur</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-3 p-4">
+                        <li className="row-span-3">
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-automotive-50 to-automotive-100 p-6 no-underline outline-none focus:shadow-md"
+                              href="#"
+                            >
+                              <div className="mb-2 mt-4 text-lg font-medium text-automotive-600">
+                                Fitur ProfMobil AI
+                              </div>
+                              <p className="text-sm leading-tight text-gray-600">
+                                Jelajahi semua fitur unggulan kami untuk membantu Anda dalam transaksi mobil bekas.
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                        <ListItem href="#" title="Inspeksi Mobil + AI">
+                          Inspeksi mobil dengan bantuan AI untuk hasil yang akurat dan terpercaya.
+                        </ListItem>
+                        <ListItem href="#" title="Surat Perjanjian Digital">
+                          Buat dan kelola surat perjanjian jual beli secara digital dan aman.
+                        </ListItem>
+                        <ListItem href="#" title="Mediator Transaksi by Inspector (Manual)">
+                          Dapatkan bantuan mediator langsung dari inspector kami yang berpengalaman.
+                        </ListItem>
+                        <ListItem href="#" title="Mediator Transaksi by System (Coming Soon)">
+                          Fitur mediasi otomatis oleh sistem kami akan segera hadir.
+                        </ListItem>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-gray-700 hover:text-automotive-600 text-sm font-medium">Cara Kerja</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-3 p-4">
+                        <ListItem href="#how-it-works" title="Cara Kerja ProfMobil AI">
+                          Pelajari bagaimana ProfMobil AI membantu Anda mendapatkan mobil bekas berkualitas.
+                        </ListItem>
+                        <ListItem href="#inspection-standards" title="Standar Inspeksi">
+                          Ketahui standar inspeksi yang kami terapkan untuk memastikan kualitas mobil.
+                        </ListItem>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink
+                      href="#pricing"
+                      className="text-gray-700 hover:text-automotive-600 inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Harga
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink
+                      href="#help-center"
+                      className="text-gray-700 hover:text-automotive-600 inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Pusat Bantuan
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
               <Button className="bg-automotive-600 hover:bg-automotive-700">Mulai</Button>
             </div>
           </div>
@@ -37,10 +111,18 @@ const NavBar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
-            <a href="#features" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Fitur</a>
-            <a href="#how-it-works" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Cara Kerja</a>
-            <a href="#why-choose-us" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Mengapa Kami</a>
+            <MobileNavItem title="Fitur" items={[
+              { title: "Inspeksi Mobil + AI", href: "#" },
+              { title: "Surat Perjanjian Digital", href: "#" },
+              { title: "Mediator Transaksi by Inspector (Manual)", href: "#" },
+              { title: "Mediator Transaksi by System (Coming Soon)", href: "#" },
+            ]} />
+            <MobileNavItem title="Cara Kerja" items={[
+              { title: "Cara Kerja ProfMobil AI", href: "#how-it-works" },
+              { title: "Standar Inspeksi", href: "#inspection-standards" },
+            ]} />
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Harga</a>
+            <a href="#help-center" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Pusat Bantuan</a>
             <Button className="w-full mt-2 bg-automotive-600 hover:bg-automotive-700">Mulai</Button>
           </div>
         </div>
@@ -48,5 +130,64 @@ const NavBar: React.FC = () => {
     </nav>
   );
 };
+
+// Helper component for mobile navigation items with dropdowns
+const MobileNavItem = ({ title, items }: { title: string; items: { title: string; href: string }[] }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <div className="space-y-1">
+      <button 
+        onClick={() => setIsOpen(!isOpen)} 
+        className="flex justify-between items-center w-full px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100"
+      >
+        {title}
+        <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "transform rotate-180")} />
+      </button>
+      {isOpen && (
+        <div className="pl-4 space-y-1">
+          {items.map((item) => (
+            <a 
+              key={item.title} 
+              href={item.href} 
+              className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-automotive-600 hover:bg-gray-50"
+            >
+              {item.title}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Helper component for navigation menu items
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a"> & {
+    title: string;
+  }
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
 
 export default NavBar;
