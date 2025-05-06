@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -24,7 +23,6 @@ const Login = () => {
     
     try {
       // This is a mock authentication - in a real application, you would connect to a backend service
-      // For now, we'll just set a cookie to simulate login success
       if (email && password) {
         // Set auth cookie that expires in 7 days
         Cookies.set('profmobil-access', 'authenticated', { expires: 7 });
@@ -37,9 +35,9 @@ const Login = () => {
           variant: "default",
         });
 
-        // Redirect to dashboard or home page after successful login
+        // Redirect to dashboard after successful login
         setTimeout(() => {
-          navigate('/');
+          navigate('/dashboard');
         }, 1500);
       }
     } catch (error) {
@@ -64,7 +62,7 @@ const Login = () => {
     // For demo purposes, we'll simulate a successful login
     Cookies.set('profmobil-access', 'authenticated', { expires: 7 });
     setTimeout(() => {
-      navigate('/');
+      navigate('/dashboard');
     }, 1500);
   };
 
