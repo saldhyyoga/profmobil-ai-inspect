@@ -93,7 +93,7 @@ const NavBar: React.FC = () => {
                         <ListItem href="/kenapa-harus-profmobil" title="Kenapa Harus ProfMobil AI">
                           Temukan alasan mengapa ProfMobil AI adalah pilihan terbaik untuk transaksi mobil bekas Anda.
                         </ListItem>
-                        <ListItem href="#about-us" title="Tentang ProfMobil AI">
+                        <ListItem href="/tentang-profmobil" title="Tentang ProfMobil AI">
                           Ketahui lebih lanjut tentang visi, misi, dan tim di balik ProfMobil AI.
                         </ListItem>
                       </ul>
@@ -151,7 +151,7 @@ const NavBar: React.FC = () => {
             ]} />
             <MobileNavItem title="Tentang Kami" items={[
               { title: "Kenapa Harus ProfMobil AI", href: "/kenapa-harus-profmobil" },
-              { title: "Tentang ProfMobil AI", href: "#about-us" },
+              { title: "Tentang ProfMobil AI", href: "/tentang-profmobil" },
             ]} />
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Harga</a>
             <Link to="/pusat-bantuan" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Pusat Bantuan</Link>
