@@ -1,8 +1,8 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Car, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 import {
   NavigationMenu,
@@ -16,7 +16,23 @@ import {
 import { cn } from "@/lib/utils";
 
 const NavBar: React.FC = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check for the authentication cookie
+    const authCookie = Cookies.get('profmobil-access');
+    setIsLoggedIn(!!authCookie);
+  }, []);
+
+  const handleAuthButtonClick = () => {
+    if (isLoggedIn) {
+      navigate('/dashboard');
+    } else {
+      navigate('/login');
+    }
+  };
 
   return (
     <nav className="bg-white sticky top-0 z-50 shadow-sm">
@@ -42,7 +58,8 @@ const NavBar: React.FC = () => {
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-automotive-50 to-automotive-100 p-6 no-underline outline-none focus:shadow-md"
                               to="/fitur"
                             >
-                              {/* 
+                              
+                              {/*
                               <div className="mb-2 mt-4 text-lg font-medium text-automotive-600">
                                 Fitur ProfMobil AI
                               </div>
@@ -50,13 +67,14 @@ const NavBar: React.FC = () => {
                                 Jelajahi semua fitur unggulan kami untuk membantu Anda dalam transaksi mobil bekas.
                               </p>
                               */}
+                            
                             </Link>
                           </NavigationMenuLink>
                         </li>
                         <ListItem href="/inspeksi-mobil-ai" title="Inspeksi Mobil + AI">
                           Inspeksi mobil dengan bantuan AI untuk hasil yang akurat dan terpercaya.
                         </ListItem>
-                        {/* 
+                        
                         <ListItem href="/surat-perjanjian-digital" title="Surat Perjanjian Digital">
                           Buat dan kelola surat perjanjian jual beli secara digital dan aman.
                         </ListItem>
@@ -69,7 +87,7 @@ const NavBar: React.FC = () => {
                         <ListItem href="#" title="Kalkulasi Harga Pasar">
                           Dapatkan estimasi harga pasar untuk mobil bekas berdasarkan data terkini.
                         </ListItem>
-                        */}
+                        
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -119,7 +137,12 @@ const NavBar: React.FC = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <Button className="bg-automotive-600 hover:bg-automotive-700">Mulai</Button>
+              <Button 
+                className="bg-automotive-600 hover:bg-automotive-700"
+                onClick={handleAuthButtonClick}
+              >
+                {isLoggedIn ? 'Dashboard' : 'Mulai'}
+              </Button>
             </div>
           </div>
           <div className="md:hidden">
@@ -138,12 +161,12 @@ const NavBar: React.FC = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
             <MobileNavItem title="Fitur" items={[
               { title: "Inspeksi Mobil + AI", href: "/inspeksi-mobil-ai" },
-              /* 
+              
               { title: "Surat Perjanjian Digital", href: "/surat-perjanjian-digital" },
               { title: "Mediator Transaksi by Inspector (Manual)", href: "/mediator-transaksi" },
               { title: "Mediator Transaksi by System (Coming Soon)", href: "#" },
               { title: "Kalkulasi Harga Pasar", href: "#" },
-              */
+              
             ]} />
             <MobileNavItem title="Cara Kerja" items={[
               { title: "Cara Kerja ProfMobil AI", href: "/cara-kerja" },
@@ -155,7 +178,12 @@ const NavBar: React.FC = () => {
             ]} />
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Harga</a>
             <Link to="/pusat-bantuan" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Pusat Bantuan</Link>
-            <Button className="w-full mt-2 bg-automotive-600 hover:bg-automotive-700">Mulai</Button>
+            <Button 
+              className="w-full mt-2 bg-automotive-600 hover:bg-automotive-700"
+              onClick={handleAuthButtonClick}
+            >
+              {isLoggedIn ? 'Dashboard' : 'Mulai'}
+            </Button>
           </div>
         </div>
       )}

@@ -15,6 +15,8 @@ import CaraKerjaProfMobilAi from "./pages/CaraKerjaProfMobilAi";
 import KenapaHarusProfMobilAi from "./pages/KenapaHarusProfMobilAi";
 import PusatBantuan from "./pages/PusatBantuan";
 import TentangProfMobilAi from "./pages/TentangProfMobilAi";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const App = () => {
               <Route path="/kenapa-harus-profmobil" element={<KenapaHarusProfMobilAi />} />
               <Route path="/pusat-bantuan" element={<PusatBantuan />} />
               <Route path="/tentang-profmobil" element={<TentangProfMobilAi />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
