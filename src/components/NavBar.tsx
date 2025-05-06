@@ -101,19 +101,20 @@ const NavBar: React.FC = () => {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink
-                      href="#pricing"
                       className="text-gray-700 hover:text-automotive-600 inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium"
+                      href="#pricing"
                     >
                       Harga
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuLink
-                      as={Link}
-                      to="/pusat-bantuan"
-                      className="text-gray-700 hover:text-automotive-600 inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Pusat Bantuan
+                    <NavigationMenuLink asChild>
+                      <Link
+                        to="/pusat-bantuan"
+                        className="text-gray-700 hover:text-automotive-600 inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium"
+                      >
+                        Pusat Bantuan
+                      </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 </NavigationMenuList>
