@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import NavBar from '@/components/NavBar';
+import DashboardSidebar from '@/components/DashboardSidebar';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from 'react-router-dom';
 import { Calendar, ChevronRight, FileText, LogIn, Settings, User, Users } from "lucide-react";
@@ -31,95 +31,36 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-automotive-50 to-tech-50">
+    <div className="min-h-screen flex flex-col">
       <NavBar />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row gap-6">
-          {/* Sidebar */}
-          <div className="w-full md:w-64 bg-white rounded-xl shadow-lg p-4">
-            <div className="space-y-1">
-              <h2 className="font-semibold text-gray-700 mb-4">Role</h2>
-              <RoleButton 
-                active={activeRole === 'user'} 
-                onClick={() => setActiveRole('user')}
-                icon={<User className="h-4 w-4 mr-2" />}
-                label="User"
-              />
-              <RoleButton 
-                active={activeRole === 'cs'} 
-                onClick={() => setActiveRole('cs')}
-                icon={<Users className="h-4 w-4 mr-2" />}
-                label="Customer Service"
-              />
-              <RoleButton 
-                active={activeRole === 'admin'} 
-                onClick={() => setActiveRole('admin')}
-                icon={<Settings className="h-4 w-4 mr-2" />}
-                label="Admin"
-              />
-              <RoleButton 
-                active={activeRole === 'superuser'} 
-                onClick={() => setActiveRole('superuser')}
-                icon={<User className="h-4 w-4 mr-2" />}
-                label="Superuser"
-              />
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-gray-200">
-              <Button onClick={handleLogout} variant="outline" className="w-full justify-start text-left">
-                <LogIn className="h-4 w-4 mr-2" />
-                Logout
-              </Button>
-            </div>
-          </div>
-
-          {/* Main Content */}
-          <div className="flex-1">
+      <div className="flex flex-1 overflow-hidden">
+        <DashboardSidebar />
+        
+        <main className="flex-1 overflow-y-auto bg-gradient-to-br from-automotive-50 to-tech-50 p-6">
+          <div className="max-w-7xl mx-auto">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               {/* Header */}
               <div className="px-6 py-4 bg-gradient-to-r from-automotive-600 to-automotive-700 text-white">
-                <h1 className="text-xl font-semibold">
-                  {activeRole === 'user' && 'Dashboard Pengguna'}
-                  {activeRole === 'cs' && 'Dashboard Customer Service'}
-                  {activeRole === 'admin' && 'Dashboard Admin'}
-                  {activeRole === 'superuser' && 'Dashboard Superuser'}
-                </h1>
+                <h1 className="text-xl font-semibold">Dashboard Pengguna</h1>
               </div>
 
-              {/* Dashboard Content */}
+              {/* Dashboard Content - Only showing User dashboard now */}
               <div className="p-6">
-                {activeRole === 'user' && <UserDashboard />}
+                <UserDashboard />
+                
+                {/* Commented out other role dashboards but keeping the code
                 {activeRole === 'cs' && <CustomerServiceDashboard />}
                 {activeRole === 'admin' && <AdminDashboard />}
                 {activeRole === 'superuser' && <SuperuserDashboard />}
+                */}
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 };
-
-// Role Button Component
-const RoleButton = ({ active, onClick, icon, label }: { 
-  active: boolean; 
-  onClick: () => void; 
-  icon: React.ReactNode;
-  label: string;
-}) => (
-  <button 
-    onClick={onClick}
-    className={`flex items-center w-full px-3 py-2 rounded-md text-sm transition-colors ${
-      active 
-        ? 'bg-automotive-100 text-automotive-700 font-medium' 
-        : 'text-gray-600 hover:bg-gray-100'
-    }`}
-  >
-    {icon}
-    {label}
-  </button>
-);
 
 // User Dashboard Content
 const UserDashboard = () => {
@@ -211,6 +152,7 @@ const UserDashboard = () => {
 };
 
 // Customer Service Dashboard Content
+/* Commented out other roles' dashboards but keeping the code for future implementation
 const CustomerServiceDashboard = () => {
   const pendingRequests = [
     { 
@@ -383,6 +325,7 @@ const SuperuserDashboard = () => {
     </div>
   );
 };
+*/
 
 // Dashboard Card Component
 const DashboardCard = ({ 
