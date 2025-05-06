@@ -7,8 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { StrictMode } from "react";
 import Index from "./pages/Index";
 import InspeksiMobilAiPage from "./pages/InspeksiMobilAi";
-import SuratPerjanjianDigitalPage from "./pages/SuratPerjanjianDigital";
-import MediatorTransaksi from "./pages/MediatorTransaksi";
+// import SuratPerjanjianDigitalPage from "./pages/SuratPerjanjianDigital";
+// import MediatorTransaksi from "./pages/MediatorTransaksi";
 import InspeksiStandarDetail from "./pages/InspeksiStandarDetail";
 import NotFound from "./pages/NotFound";
 import CaraKerjaProfMobilAi from "./pages/CaraKerjaProfMobilAi";
@@ -32,8 +32,8 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/inspeksi-mobil-ai" element={<InspeksiMobilAiPage />} />
-              <Route path="/surat-perjanjian-digital" element={<SuratPerjanjianDigitalPage />} />
-              <Route path="/mediator-transaksi" element={<MediatorTransaksi />} />
+              {/* <Route path="/surat-perjanjian-digital" element={<SuratPerjanjianDigitalPage />} /> */}
+              {/* <Route path="/mediator-transaksi" element={<MediatorTransaksi />} /> */}
               <Route path="/standar-inspeksi" element={<InspeksiStandarDetail />} />
               <Route path="/cara-kerja" element={<CaraKerjaProfMobilAi />} />
               <Route path="/kenapa-harus-profmobil" element={<KenapaHarusProfMobilAi />} />

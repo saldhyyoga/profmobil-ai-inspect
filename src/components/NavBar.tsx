@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Car, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -75,6 +76,7 @@ const NavBar: React.FC = () => {
                           Inspeksi mobil dengan bantuan AI untuk hasil yang akurat dan terpercaya.
                         </ListItem>
                         
+                        {/* Commented out other features
                         <ListItem href="/surat-perjanjian-digital" title="Surat Perjanjian Digital">
                           Buat dan kelola surat perjanjian jual beli secara digital dan aman.
                         </ListItem>
@@ -87,6 +89,7 @@ const NavBar: React.FC = () => {
                         <ListItem href="#" title="Kalkulasi Harga Pasar">
                           Dapatkan estimasi harga pasar untuk mobil bekas berdasarkan data terkini.
                         </ListItem>
+                        */}
                         
                       </ul>
                     </NavigationMenuContent>
@@ -162,10 +165,12 @@ const NavBar: React.FC = () => {
             <MobileNavItem title="Fitur" items={[
               { title: "Inspeksi Mobil + AI", href: "/inspeksi-mobil-ai" },
               
+              /* Commented out other features
               { title: "Surat Perjanjian Digital", href: "/surat-perjanjian-digital" },
               { title: "Mediator Transaksi by Inspector (Manual)", href: "/mediator-transaksi" },
               { title: "Mediator Transaksi by System (Coming Soon)", href: "#" },
               { title: "Kalkulasi Harga Pasar", href: "#" },
+              */
               
             ]} />
             <MobileNavItem title="Cara Kerja" items={[
