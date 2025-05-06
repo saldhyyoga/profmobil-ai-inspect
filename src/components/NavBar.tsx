@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Car, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -89,7 +90,7 @@ const NavBar: React.FC = () => {
                     <NavigationMenuTrigger className="text-gray-700 hover:text-automotive-600 text-sm font-medium">Tentang Kami</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4">
-                        <ListItem href="/kenapa-harus-profmobil" title="Kenapa Harus Menggunakan ProfMobil AI">
+                        <ListItem href="/kenapa-harus-profmobil" title="Kenapa Harus ProfMobil AI">
                           Temukan alasan mengapa ProfMobil AI adalah pilihan terbaik untuk transaksi mobil bekas Anda.
                         </ListItem>
                         <ListItem href="#about-us" title="Tentang ProfMobil AI">
@@ -108,7 +109,8 @@ const NavBar: React.FC = () => {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink
-                      href="#help-center"
+                      as={Link}
+                      to="/pusat-bantuan"
                       className="text-gray-700 hover:text-automotive-600 inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium"
                     >
                       Pusat Bantuan
@@ -151,7 +153,7 @@ const NavBar: React.FC = () => {
               { title: "Tentang ProfMobil AI", href: "#about-us" },
             ]} />
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Harga</a>
-            <a href="#help-center" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Pusat Bantuan</a>
+            <Link to="/pusat-bantuan" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Pusat Bantuan</Link>
             <Button className="w-full mt-2 bg-automotive-600 hover:bg-automotive-700">Mulai</Button>
           </div>
         </div>

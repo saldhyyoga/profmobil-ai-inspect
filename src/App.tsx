@@ -13,6 +13,7 @@ import InspeksiStandarDetail from "./pages/InspeksiStandarDetail";
 import NotFound from "./pages/NotFound";
 import CaraKerjaProfMobilAi from "./pages/CaraKerjaProfMobilAi";
 import KenapaHarusProfMobilAi from "./pages/KenapaHarusProfMobilAi";
+import PusatBantuan from "./pages/PusatBantuan";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => {
               <Route path="/standar-inspeksi" element={<InspeksiStandarDetail />} />
               <Route path="/cara-kerja" element={<CaraKerjaProfMobilAi />} />
               <Route path="/kenapa-harus-profmobil" element={<KenapaHarusProfMobilAi />} />
+              <Route path="/pusat-bantuan" element={<PusatBantuan />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
