@@ -11,6 +11,7 @@ import SuratPerjanjianDigitalPage from "./pages/SuratPerjanjianDigital";
 import MediatorTransaksi from "./pages/MediatorTransaksi";
 import InspeksiStandarDetail from "./pages/InspeksiStandarDetail";
 import NotFound from "./pages/NotFound";
+import CaraKerjaProfMobilAi from "./pages/CaraKerjaProfMobilAi";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => {
               <Route path="/surat-perjanjian-digital" element={<SuratPerjanjianDigitalPage />} />
               <Route path="/mediator-transaksi" element={<MediatorTransaksi />} />
               <Route path="/standar-inspeksi" element={<InspeksiStandarDetail />} />
+              <Route path="/cara-kerja" element={<CaraKerjaProfMobilAi />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
