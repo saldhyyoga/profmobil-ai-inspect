@@ -53,6 +53,7 @@ const NavBar: React.FC = () => {
                         <ListItem href="/inspeksi-mobil-ai" title="Inspeksi Mobil + AI">
                           Inspeksi mobil dengan bantuan AI untuk hasil yang akurat dan terpercaya.
                         </ListItem>
+                        {/* 
                         <ListItem href="/surat-perjanjian-digital" title="Surat Perjanjian Digital">
                           Buat dan kelola surat perjanjian jual beli secara digital dan aman.
                         </ListItem>
@@ -65,6 +66,7 @@ const NavBar: React.FC = () => {
                         <ListItem href="#" title="Kalkulasi Harga Pasar">
                           Dapatkan estimasi harga pasar untuk mobil bekas berdasarkan data terkini.
                         </ListItem>
+                        */}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -131,10 +133,12 @@ const NavBar: React.FC = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
             <MobileNavItem title="Fitur" items={[
               { title: "Inspeksi Mobil + AI", href: "/inspeksi-mobil-ai" },
+              /* 
               { title: "Surat Perjanjian Digital", href: "/surat-perjanjian-digital" },
               { title: "Mediator Transaksi by Inspector (Manual)", href: "/mediator-transaksi" },
               { title: "Mediator Transaksi by System (Coming Soon)", href: "#" },
               { title: "Kalkulasi Harga Pasar", href: "#" },
+              */
             ]} />
             <MobileNavItem title="Cara Kerja" items={[
               { title: "Cara Kerja ProfMobil AI", href: "#how-it-works" },
