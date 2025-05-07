@@ -17,6 +17,7 @@ import PusatBantuan from "./pages/PusatBantuan";
 import TentangProfMobilAi from "./pages/TentangProfMobilAi";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import BookingInspeksi from "./pages/BookingInspeksi";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => {
               <Route path="/tentang-profmobil" element={<TentangProfMobilAi />} />
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/booking-inspeksi" element={<BookingInspeksi />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

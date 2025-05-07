@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Car, Menu, X, ChevronDown, User } from "lucide-react";
+import { Car, Menu, X, ChevronDown, User, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Cookies from 'js-cookie';
@@ -148,6 +148,16 @@ const NavBar: React.FC = () => {
                     <NavigationMenuItem>
                       <NavigationMenuLink asChild>
                         <Link
+                          to="/booking-inspeksi"
+                          className="text-gray-700 hover:text-automotive-600 inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium"
+                        >
+                          Booking Inspeksi
+                        </Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <NavigationMenuLink asChild>
+                        <Link
                           to="/pusat-bantuan"
                           className="text-gray-700 hover:text-automotive-600 inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium"
                         >
@@ -213,12 +223,7 @@ const NavBar: React.FC = () => {
             <MobileNavItem title="Fitur" items={[
               { title: "Inspeksi Mobil + AI", href: "/inspeksi-mobil-ai" },
               
-              /* Commented out other features
-              { title: "Surat Perjanjian Digital", href: "/surat-perjanjian-digital" },
-              { title: "Mediator Transaksi by Inspector (Manual)", href: "/mediator-transaksi" },
-              { title: "Mediator Transaksi by System (Coming Soon)", href: "#" },
-              { title: "Kalkulasi Harga Pasar", href: "#" },
-              */
+              /* ... keep existing code (other mobile menu items) */
               
             ]} />
             <MobileNavItem title="Cara Kerja" items={[
@@ -230,6 +235,7 @@ const NavBar: React.FC = () => {
               { title: "Tentang ProfMobil AI", href: "/tentang-profmobil" },
             ]} />
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Harga</a>
+            <Link to="/booking-inspeksi" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Booking Inspeksi</Link>
             <Link to="/pusat-bantuan" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-automotive-600 hover:bg-gray-100">Pusat Bantuan</Link>
             <Button 
               className="w-full mt-2 bg-automotive-600 hover:bg-automotive-700"
