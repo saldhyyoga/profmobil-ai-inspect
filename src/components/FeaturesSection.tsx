@@ -60,24 +60,14 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-          <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl relative inline-block">
-              Fitur Didukung AI
-              <div className="absolute -bottom-2 left-0 h-1 w-1/2 bg-automotive-600"></div>
-            </h2>
-            <p className="mt-4 text-xl text-gray-500">
-              Teknologi mutakhir kami menyediakan analisis dan wawasan kendaraan yang komprehensif.
-            </p>
-          </div>
-          <div className="md:w-1/2 px-6 py-4 bg-automotive-600 text-white rounded-xl shadow-lg">
-            {/* Commented out but preserved
-            <blockquote className="italic">
-              "Fitur AI kami memberikan tingkat akurasi 95% dalam identifikasi kerusakan dan potensi masalah kendaraan."
-            </blockquote>
-            <p className="mt-2 text-sm text-automotive-100 text-right">- Tim Teknis ProfMobil AI</p>
-            */}
-          </div>
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl relative inline-block">
+            Fitur Didukung AI
+            <div className="absolute -bottom-2 left-0 h-1 w-1/2 bg-automotive-600"></div>
+          </h2>
+          <p className="mt-4 text-xl text-gray-500">
+            Teknologi mutakhir kami menyediakan analisis dan wawasan kendaraan yang komprehensif.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -32,7 +32,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
   hotPrice,
   features,
   popular = false,
-  ctaText = "Pilih Paket",
+  ctaText = "Pilih Paket Ini",
   discountPercent,
   imageSource
 }) => {
@@ -129,7 +129,7 @@ const PricingSection = () => {
       popular: true,
       hotPrice: "Rp 700.000 Paket 3 Inspeksi Mobil",
       features: commonFeatures,
-      ctaText: "Hubungi Kami",
+      ctaText: "Pilih Paket Ini",
       imageSource: "/lovable-uploads/285d3918-4acd-4192-9aaa-367b45f28ed0.png"
     },
     {
@@ -141,7 +141,7 @@ const PricingSection = () => {
       popular: false,
       // Removed hotPrice for Luxury Car as requested
       features: commonFeatures,
-      ctaText: "Hubungi Kami",
+      ctaText: "Pilih Paket Ini",
       imageSource: "/lovable-uploads/2a3f9ad9-4e89-414c-aea2-9fd0c792c76a.png"
     }
   ];

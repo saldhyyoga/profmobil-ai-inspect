@@ -21,9 +21,6 @@ const HeroSection = () => {
                   <Button size="lg" className="bg-automotive-600 hover:bg-automotive-700 text-white">
                     Jadwalkan Inspeksi
                   </Button>
-                  <Button size="lg" variant="outline" className="border-automotive-600 text-automotive-600 hover:bg-automotive-50">
-                    <Search className="mr-2 h-4 w-4" /> Pelajari Lebih Lanjut
-                  </Button>
                 </div>
                 
                 <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
