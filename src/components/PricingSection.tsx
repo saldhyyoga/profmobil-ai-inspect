@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Check, CircleCheck, Tag, Percent, Car } from "lucide-react";
+import { Check, CircleCheck, Tag, Percent } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 
 interface PricingFeature {
@@ -35,7 +35,6 @@ const PricingTier: React.FC<PricingTierProps> = ({
   popular = false,
   ctaText = "Pilih Paket",
   discountPercent,
-  showCarImage,
   imageSource
 }) => {
   return (
@@ -84,11 +83,11 @@ const PricingTier: React.FC<PricingTierProps> = ({
         <p className="text-gray-500 text-sm mt-1">{description}</p>
         
         <div className="mt-3">
-          <div className="bg-gray-100 rounded p-2 flex justify-center">
+          <div className="bg-gray-100 rounded p-2 flex justify-center items-center">
             <img
               src={imageSource}
-              alt="Car Image"
-              className="w-[200px] h-[200px] object-contain"
+              alt={`${title} Image`}
+              className="w-[180px] h-[120px] object-contain"
             />
           </div>
         </div>
