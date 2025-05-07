@@ -21,6 +21,7 @@ interface PricingTierProps {
   ctaText?: string;
   discountPercent?: number;
   showCarImage?: number;
+  imageSource?: string;
 }
 
 const PricingTier: React.FC<PricingTierProps> = ({
@@ -35,6 +36,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
   ctaText = "Pilih Paket",
   discountPercent,
   showCarImage,
+  imageSource
 }) => {
   return (
     <Card className={`relative h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg ${
@@ -42,7 +44,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
     }`}>
       {popular && (
         <div className="absolute top-0 right-0">
-          <div className="bg-automotive-600 text-white px-4 py-1 font-medium text-sm transform rotate-45 translate-x-8 translate-y-4">
+          <div className="bg-automotive-600 text-white px-4 py-1 font-medium text-sm transform rotate-45 translate-x-4 translate-y-6">
             Popular
           </div>
         </div>
@@ -55,7 +57,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
           </div>
         </div>
       )}
-      <CardHeader className="pb-0 pt-8">
+      <CardHeader className="pb-0 pt-10">
         <div className="flex items-baseline gap-2 mb-2">
           <h3 className="text-2xl font-bold">{title}</h3>
           {popular && <Tag size={18} className="text-automotive-600" />}
@@ -66,7 +68,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
             <span className="ml-1 text-gray-500">/mobil</span>
           </div>
           {normalPrice && (
-            <div className="flex items-baseline mt-1">
+            <div className="flex items-baseline mt-2">
               <span className="text-gray-500 line-through text-lg">{normalPrice}</span>
               <span className="ml-1 text-gray-400 text-sm">/mobil</span>
             </div>
@@ -81,31 +83,19 @@ const PricingTier: React.FC<PricingTierProps> = ({
         <p className="text-gray-600 font-medium">{carType}</p>
         <p className="text-gray-500 text-sm mt-1">{description}</p>
         
-        {showCarImage === 1 && (
-          <div className="mt-3">
-            <div className="bg-gray-100 rounded p-2 flex justify-center">
-              <Car size={50} className="text-automotive-600" />
-            </div>
+        <div className="mt-3">
+          <div className="bg-gray-100 rounded p-2 flex justify-center">
+            <img
+              src={imageSource}
+              alt="Car Image"
+              className="w-[200px] h-[200px] object-contain"
+            />
           </div>
-        )}
+        </div>
       </CardHeader>
-      <CardContent className="flex-grow">
-        <ul className="space-y-3 pt-6">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-2">
-              {feature.included ? (
-                <CircleCheck className="shrink-0 mt-0.5 h-5 w-5 text-automotive-600" />
-              ) : (
-                <Check className="shrink-0 mt-0.5 h-5 w-5 text-gray-400" />
-              )}
-              <span className={feature.included ? 'text-gray-800' : 'text-gray-500'}>{feature.title}</span>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
       <CardFooter className="pt-6">
         <Button 
-          className={`w-full ${popular ? 'bg-automotive-600 hover:bg-automotive-700' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'}`}
+          className={`w-full ${popular ? 'bg-automotive-600 hover:bg-automotive-700' : 'bg-gray-100 text-gray-900 hover:bg-automotive-700 hover:text-white'}`}
           size="lg"
           variant={popular ? "default" : "outline"}
         >
@@ -128,41 +118,43 @@ const PricingSection = () => {
 
   const pricingTiers = [
     {
+      title: "Premium Car",
+      normalPrice: "Rp 400.000",
+      price: "Rp 300.000",
+      carType: "SUV, Full Size Sedan",
+      description: "(Kijang Innova, Toyota Fortuner, Mitsubishi Pajero Sport, Toyota Camry, dll)",
+      popular: false,
+      discountPercent: 25,
+      hotPrice: "Rp 800.000 Paket 3 Inspeksi Mobil",
+      features: commonFeatures,
+      ctaText: "Pilih Paket Ini",
+      imageSource: "/lovable-uploads/6ce53521-60ee-40b4-815f-f21cb20b0e90.png"
+    },
+    {
       title: "Reguler Car",
       normalPrice: "Rp 300.000",
       price: "Rp 250.000",
       carType: "City Car, LMPV, LSUV",
       description: "(Honda Brio, Toyota Avanza, Suzuki Ertiga, Mitsubishi Xpander, dll)",
-      popular: false,
+      popular: true,
       discountPercent: 16,
       hotPrice: "Rp 700.000 Paket 3 Inspeksi Mobil",
       features: commonFeatures,
       ctaText: "Hubungi Kami",
-      showCarImage: 1
-    },
-    {
-      title: "Prenium Car",
-      normalPrice: "Rp 400.000",
-      price: "Rp 300.000",
-      carType: "SUV, Full Size Sedan",
-      description: "(Kijang Innova, Toyota Fortuner, Mitsubishi Pajero Sport, Toyota Camry, dll)",
-      popular: true,
-      discountPercent: 25,
-      hotPrice: "Rp 800.000 Paket 3 Inspeksi Mobil",
-      features: commonFeatures,
-      ctaText: "Pilih Paket Ini"
+      imageSource: "/lovable-uploads/285d3918-4acd-4192-9aaa-367b45f28ed0.png"
     },
     {
       title: "Luxury Car",
       normalPrice: "Rp 400.000",
       price: "Rp 300.000",
-      carType: "BMW, Mercedes Benz, Toyota Alphard, dll",
-      description: "",
+      carType: "Mobil Eropa, Luxury MPV, Luxury Sedan",
+      description: "BMW, Mercedes Benz, Toyota Alphard, Toyota Camry, Honda Accord, dll",
       popular: false,
       discountPercent: 25,
       hotPrice: "Rp 800.000 Paket 3 Inspeksi Mobil",
       features: commonFeatures,
-      ctaText: "Hubungi Kami"
+      ctaText: "Hubungi Kami",
+      imageSource: "/lovable-uploads/2a3f9ad9-4e89-414c-aea2-9fd0c792c76a.png"
     }
   ];
 
@@ -225,7 +217,7 @@ const PricingSection = () => {
               popular={tier.popular}
               ctaText={tier.ctaText}
               discountPercent={tier.discountPercent}
-              showCarImage={tier.showCarImage}
+              imageSource={tier.imageSource}
             />
           ))}
         </div>
