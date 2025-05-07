@@ -21,6 +21,7 @@ interface PricingTierProps {
   ctaText?: string;
   discountPercent?: number;
   imageSource?: string;
+  whatsappLink: string; // Added whatsappLink prop
 }
 
 const PricingTier: React.FC<PricingTierProps> = ({
@@ -34,8 +35,14 @@ const PricingTier: React.FC<PricingTierProps> = ({
   popular = false,
   ctaText = "Pilih Paket Ini",
   discountPercent,
-  imageSource
+  imageSource,
+  whatsappLink
 }) => {
+  // Function to handle button click
+  const handleButtonClick = () => {
+    window.open(whatsappLink, '_blank');
+  };
+
   return (
     <Card className={`relative h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg ${
       popular ? 'border-automotive-600 border-2 shadow-md' : ''
@@ -89,6 +96,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
           className={`w-full ${popular ? 'bg-automotive-600 hover:bg-automotive-700' : 'bg-gray-100 text-gray-900 hover:bg-automotive-700 hover:text-white'}`}
           size="lg"
           variant={popular ? "default" : "outline"}
+          onClick={handleButtonClick}
         >
           {ctaText}
         </Button>
@@ -106,6 +114,11 @@ const PricingSection = () => {
     { title: "Rekomendasi AI: Nilai pasar, estimasi perbaikan, dan skor kondisi kendaraan", included: true },
     { title: "Sertifikasi ProfMobil AI (jika memenuhi syarat)", included: true },
   ];
+  
+  // WhatsApp links for each car type
+  const premiumCarWhatsAppLink = "https://wa.me/6282112302516?text=Halo%20ProfMobil%2C%20saya%20ingin%20booking%20inspeksi.%20Berikut%20data%20inspeksinya%20%3A%0A-%20Data%20Pemesan%0ANama%3A%20%0ANomor%20Handphone%3A%0AEmail%0A%0A-%20Data%20Mobil%20Yang%20Akan%20Di%20Inspeksi%20(Premium%20Car)%0AMerk%3A%0AModel%3A%0ATipe%3A%0ATahun%3A%0AWarna%0A%0A-%20Lokasi%20dan%20Waktu%0AKota%3A%0ATanggal%20Inspeksi%3A%0ACatatan%20Tambahan%3A%0A%0ATerimakasih";
+  const regulerCarWhatsAppLink = "https://wa.me/6282112302516?text=Halo%20ProfMobil%2C%20saya%20ingin%20booking%20inspeksi.%20Berikut%20data%20inspeksinya%20%3A%0A-%20Data%20Pemesan%0ANama%3A%20%0ANomor%20Handphone%3A%0AEmail%0A%0A-%20Data%20Mobil%20Yang%20Akan%20Di%20Inspeksi%20(Reguler%20Car)%0AMerk%3A%0AModel%3A%0ATipe%3A%0ATahun%3A%0AWarna%0A%0A-%20Lokasi%20dan%20Waktu%0AKota%3A%0ATanggal%20Inspeksi%3A%0ACatatan%20Tambahan%3A%0A%0ATerimakasih";
+  const luxuryCarWhatsAppLink = "https://wa.me/6282112302516?text=Halo%20ProfMobil%2C%20saya%20ingin%20booking%20inspeksi.%20Berikut%20data%20inspeksinya%20%3A%0A-%20Data%20Pemesan%0ANama%3A%20%0ANomor%20Handphone%3A%0AEmail%0A%0A-%20Data%20Mobil%20Yang%20Akan%20Di%20Inspeksi%20(Luxury%20Car)%0AMerk%3A%0AModel%3A%0ATipe%3A%0ATahun%3A%0AWarna%0A%0A-%20Lokasi%20dan%20Waktu%0AKota%3A%0ATanggal%20Inspeksi%3A%0ACatatan%20Tambahan%3A%0A%0ATerimakasih";
 
   const pricingTiers = [
     {
@@ -118,7 +131,8 @@ const PricingSection = () => {
       hotPrice: "Rp 800.000 Paket 3 Inspeksi Mobil",
       features: commonFeatures,
       ctaText: "Pilih Paket Ini",
-      imageSource: "/lovable-uploads/6ce53521-60ee-40b4-815f-f21cb20b0e90.png"
+      imageSource: "/lovable-uploads/6ce53521-60ee-40b4-815f-f21cb20b0e90.png",
+      whatsappLink: premiumCarWhatsAppLink
     },
     {
       title: "Reguler Car",
@@ -130,7 +144,8 @@ const PricingSection = () => {
       hotPrice: "Rp 700.000 Paket 3 Inspeksi Mobil",
       features: commonFeatures,
       ctaText: "Pilih Paket Ini",
-      imageSource: "/lovable-uploads/285d3918-4acd-4192-9aaa-367b45f28ed0.png"
+      imageSource: "/lovable-uploads/285d3918-4acd-4192-9aaa-367b45f28ed0.png",
+      whatsappLink: regulerCarWhatsAppLink
     },
     {
       title: "Luxury Car",
@@ -142,7 +157,8 @@ const PricingSection = () => {
       // Removed hotPrice for Luxury Car as requested
       features: commonFeatures,
       ctaText: "Pilih Paket Ini",
-      imageSource: "/lovable-uploads/2a3f9ad9-4e89-414c-aea2-9fd0c792c76a.png"
+      imageSource: "/lovable-uploads/2a3f9ad9-4e89-414c-aea2-9fd0c792c76a.png",
+      whatsappLink: luxuryCarWhatsAppLink
     }
   ];
 
@@ -205,6 +221,7 @@ const PricingSection = () => {
               popular={tier.popular}
               ctaText={tier.ctaText}
               imageSource={tier.imageSource}
+              whatsappLink={tier.whatsappLink}
             />
           ))}
         </div>
