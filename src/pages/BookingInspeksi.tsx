@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { CalendarIcon, Info } from 'lucide-react';
+import { CalendarIcon, Info, User, MapPin, Car } from 'lucide-react';
 import { format } from 'date-fns';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
