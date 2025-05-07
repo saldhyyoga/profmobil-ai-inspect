@@ -12,10 +12,10 @@ const HeroSection = () => {
               <div className="lg:col-span-6">
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                   <span className="block">Inspeksi Mobil Bekas</span>
-                  <span className="block text-automotive-600">Bertenaga AI</span>
+                  <span className="block text-automotive-600">Didukung AI</span>
                 </h1>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg md:mt-5 md:text-xl">
-                  ProfMobil AI memberikan inspeksi mobil yang akurat dan komprehensif didukung oleh kecerdasan buatan canggih. Dapatkan laporan terperinci, prediksi kerusakan, dan penilaian pasar secara instan.
+                  ProfMobil AI memberikan inspeksi mobil yang akurat dan komprehensif didukung oleh kecerdasan buatan canggih. Dapatkan laporan terperinci, prediksi kerusakan, estimasi perbaikan dan ambil keputusan by data.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-3">
                   <Button size="lg" className="bg-automotive-600 hover:bg-automotive-700 text-white">
@@ -27,6 +27,7 @@ const HeroSection = () => {
                 </div>
                 
                 <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                  {/* Commented out but preserved
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-automotive-600" />
                     <span className="ml-2 text-sm text-gray-700">Presisi AI</span>
@@ -39,6 +40,7 @@ const HeroSection = () => {
                     <CheckCircle className="h-5 w-5 text-automotive-600" />
                     <span className="ml-2 text-sm text-gray-700">Penilaian Pasar</span>
                   </div>
+                  */}
                 </div>
               </div>
               

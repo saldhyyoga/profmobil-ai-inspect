@@ -6,8 +6,6 @@ import FeaturesSection from '@/components/FeaturesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import WhyChooseUsSection from '@/components/WhyChooseUsSection';
 import InspectionStandardsSection from '@/components/InspectionStandardsSection';
-import CarValueCalculator from '@/components/CarValueCalculator';
-import RecommendationSection from '@/components/RecommendationSection';
 import PricingSection from '@/components/PricingSection';
 import Footer from '@/components/Footer';
 

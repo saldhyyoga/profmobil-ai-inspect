@@ -47,8 +47,8 @@ const FeaturesSection = () => {
     },
     {
       icon: <Shield className="h-6 w-6" />,
-      title: "Perhitungan Nilai Pasar",
-      description: "Dapatkan penilaian pasar yang akurat berdasarkan analisis AI tentang kondisi mobil, tren pasar, dan data komprehensif."
+      title: "Analisis Anti Penipuan",
+      description: "Kami memperkenalkan fitur Fraud Analysis / Analisis Anti Penipuan — sistem yang dirancang khusus untuk melindungi transaksi Anda."
     },
     {
       icon: <Star className="h-6 w-6" />,
@@ -63,7 +63,7 @@ const FeaturesSection = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl relative inline-block">
-              Fitur Bertenaga AI
+              Fitur Didukung AI
               <div className="absolute -bottom-2 left-0 h-1 w-1/2 bg-automotive-600"></div>
             </h2>
             <p className="mt-4 text-xl text-gray-500">
@@ -71,10 +71,12 @@ const FeaturesSection = () => {
             </p>
           </div>
           <div className="md:w-1/2 px-6 py-4 bg-automotive-600 text-white rounded-xl shadow-lg">
+            {/* Commented out but preserved
             <blockquote className="italic">
               "Fitur AI kami memberikan tingkat akurasi 95% dalam identifikasi kerusakan dan potensi masalah kendaraan."
             </blockquote>
             <p className="mt-2 text-sm text-automotive-100 text-right">- Tim Teknis ProfMobil AI</p>
+            */}
           </div>
         </div>
 

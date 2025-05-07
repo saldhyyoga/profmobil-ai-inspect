@@ -20,7 +20,6 @@ interface PricingTierProps {
   popular?: boolean;
   ctaText?: string;
   discountPercent?: number;
-  showCarImage?: number;
   imageSource?: string;
 }
 
@@ -48,14 +47,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
           </div>
         </div>
       )}
-      {discountPercent && (
-        <div className="absolute top-4 left-4">
-          <div className="bg-red-500 text-white px-2 py-1 rounded-full font-medium text-xs flex items-center">
-            <Percent size={14} className="mr-1" />
-            {discountPercent}% OFF
-          </div>
-        </div>
-      )}
+      {/* Discount badge removed as requested */}
       <CardHeader className="pb-0 pt-10">
         <div className="flex items-baseline gap-2 mb-2">
           <h3 className="text-2xl font-bold">{title}</h3>
@@ -123,7 +115,6 @@ const PricingSection = () => {
       carType: "SUV, Full Size Sedan",
       description: "(Kijang Innova, Toyota Fortuner, Mitsubishi Pajero Sport, Toyota Camry, dll)",
       popular: false,
-      discountPercent: 25,
       hotPrice: "Rp 800.000 Paket 3 Inspeksi Mobil",
       features: commonFeatures,
       ctaText: "Pilih Paket Ini",
@@ -136,7 +127,6 @@ const PricingSection = () => {
       carType: "City Car, LMPV, LSUV",
       description: "(Honda Brio, Toyota Avanza, Suzuki Ertiga, Mitsubishi Xpander, dll)",
       popular: true,
-      discountPercent: 16,
       hotPrice: "Rp 700.000 Paket 3 Inspeksi Mobil",
       features: commonFeatures,
       ctaText: "Hubungi Kami",
@@ -149,7 +139,6 @@ const PricingSection = () => {
       carType: "Mobil Eropa, Luxury MPV, Luxury Sedan",
       description: "BMW, Mercedes Benz, Toyota Alphard, Toyota Camry, Honda Accord, dll",
       popular: false,
-      discountPercent: 25,
       hotPrice: "Rp 800.000 Paket 3 Inspeksi Mobil",
       features: commonFeatures,
       ctaText: "Hubungi Kami",
@@ -162,7 +151,7 @@ const PricingSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-            💰 Harga Layanan Inspeksi
+            Harga Layanan Inspeksi
           </h2>
           <p className="max-w-3xl text-xl text-gray-500 mx-auto">
             Kami menyediakan paket inspeksi yang sesuai dengan kebutuhan dan jenis kendaraan Anda.
@@ -198,7 +187,7 @@ const PricingSection = () => {
           <div className="mt-6 inline-flex items-center bg-amber-50 text-amber-800 px-4 py-2 rounded-md border border-amber-200">
             <Tag size={18} className="mr-2 text-amber-600" />
             <span className="font-medium">Promo Spesial!</span> 
-            <span className="ml-2">Diskon hingga 25% untuk semua paket inspeksi</span>
+            <span className="ml-2">Diskon untuk semua paket inspeksi</span>
           </div>
         </div>
 
@@ -215,7 +204,6 @@ const PricingSection = () => {
               features={tier.features}
               popular={tier.popular}
               ctaText={tier.ctaText}
-              discountPercent={tier.discountPercent}
               imageSource={tier.imageSource}
             />
           ))}

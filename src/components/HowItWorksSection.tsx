@@ -16,8 +16,8 @@ const HowItWorksSection = () => {
       subItems: [
         { id: 1, text: "Pilih lokasi & jadwal inspeksi" },
         { id: 2, text: "Masukkan detail mobil (merek, tahun, dll.)" },
-        { id: 3, text: "Pilih metode pembayaran" },
-        { id: 4, text: "Opsional: Pilih antara inspeksi di tempat atau jarak jauh" }
+        { id: 3, text: "Masukan kebutuhan, budget, tipe mobil dan tempat tinggal" },
+        { id: 4, text: "Pilih metode pembayaran" }
       ]
     },
     {
@@ -26,11 +26,10 @@ const HowItWorksSection = () => {
       title: "Inspeksi Lapangan",
       description: "Inspektor profesional kami melakukan pemeriksaan menyeluruh terhadap kendaraan Anda.",
       subItems: [
-        { id: 1, text: "Inspeksi fisik oleh inspektor bersertifikat" },
-        { id: 2, text: "Dokumentasi digital melalui aplikasi mobile" },
+        { id: 1, text: "Inspeksi fisik oleh inspektor profesional" },
+        { id: 2, text: "Dokumentasi digital melalui aplikasi website" },
         { id: 3, text: "Verifikasi daftar periksa komprehensif" },
-        { id: 4, text: "Dokumentasi foto dan video" },
-        { id: 5, text: "Pemindaian OBD dan analisis suara mesin" }
+        { id: 4, text: "Dokumentasi foto dan video" }
       ]
     },
     {
@@ -40,10 +39,9 @@ const HowItWorksSection = () => {
       description: "AI canggih kami memproses data inspeksi untuk evaluasi yang akurat.",
       subItems: [
         { id: 1, text: "Pemrosesan dan analisis data AI" },
-        { id: 2, text: "Perbandingan dengan database yang luas" },
-        { id: 3, text: "Perhitungan skor kondisi mobil" },
-        { id: 4, text: "Deteksi dan penilaian kerusakan" },
-        { id: 5, text: "Estimasi biaya perbaikan" }
+        { id: 2, text: "Perhitungan skor kondisi mobil" },
+        { id: 3, text: "Deteksi dan penilaian kerusakan" },
+        { id: 4, text: "Estimasi biaya perbaikan" }
       ]
     },
     {
@@ -54,9 +52,8 @@ const HowItWorksSection = () => {
       subItems: [
         { id: 1, text: "Ringkasan diagnosis AI" },
         { id: 2, text: "Daftar periksa inspeksi lengkap" },
-        { id: 3, text: "Penilaian nilai pasar" },
-        { id: 4, text: "Rekomendasi pembelian" },
-        { id: 5, text: "Sertifikasi ProfMobil (jika memenuhi syarat)" }
+        { id: 3, text: "Rekomendasi pembelian" },
+        { id: 4, text: "Sertifikasi ProfMobil (jika memenuhi syarat)" }
       ]
     }
   ];
