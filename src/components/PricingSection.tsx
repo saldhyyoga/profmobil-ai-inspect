@@ -15,7 +15,7 @@ interface PricingTierProps {
   price: string;
   description: string;
   carType: string;
-  hotPrice: string;
+  hotPrice?: string; // Made optional
   features: PricingFeature[];
   popular?: boolean;
   ctaText?: string;
@@ -139,7 +139,7 @@ const PricingSection = () => {
       carType: "Mobil Eropa, Luxury MPV, Luxury Sedan",
       description: "BMW, Mercedes Benz, Toyota Alphard, Toyota Camry, Honda Accord, dll",
       popular: false,
-      hotPrice: "Rp 800.000 Paket 3 Inspeksi Mobil",
+      // Removed hotPrice for Luxury Car as requested
       features: commonFeatures,
       ctaText: "Hubungi Kami",
       imageSource: "/lovable-uploads/2a3f9ad9-4e89-414c-aea2-9fd0c792c76a.png"
