@@ -43,13 +43,13 @@ const PricingTier: React.FC<PricingTierProps> = ({
       )}
       {discountPercent && (
         <div className="absolute top-4 left-4">
-          <div className="bg-red-500 text-white px-2 py-1 rounded-full font-medium text-sm flex items-center">
+          <div className="bg-red-500 text-white px-2 py-1 rounded-full font-medium text-xs flex items-center">
             <Percent size={14} className="mr-1" />
             {discountPercent}% OFF
           </div>
         </div>
       )}
-      <CardHeader className="pb-0">
+      <CardHeader className="pb-0 pt-8">
         <div className="flex items-baseline gap-2 mb-2">
           <h3 className="text-2xl font-bold">{title}</h3>
           {popular && <Tag size={18} className="text-automotive-600" />}
@@ -57,12 +57,12 @@ const PricingTier: React.FC<PricingTierProps> = ({
         <div className="flex flex-col mb-4">
           <div className="flex items-baseline">
             <span className="text-4xl font-extrabold text-automotive-600">{price}</span>
-            <span className="ml-1 text-gray-500">/inspeksi</span>
+            <span className="ml-1 text-gray-500">/mobil</span>
           </div>
           {normalPrice && (
             <div className="flex items-baseline mt-1">
               <span className="text-gray-500 line-through text-lg">{normalPrice}</span>
-              <span className="ml-1 text-gray-400 text-sm">/inspeksi</span>
+              <span className="ml-1 text-gray-400 text-sm">/mobil</span>
             </div>
           )}
         </div>
@@ -99,14 +99,14 @@ const PricingSection = () => {
   const pricingTiers = [
     {
       title: "Basic",
-      normalPrice: "Rp 350.000",
-      price: "Rp 275.000",
-      description: "Cocok untuk city car dan sedan kecil",
+      normalPrice: "Rp 300.000",
+      price: "Rp 250.000",
+      description: "City Car, MPV, LSUV, Hatchback",
       popular: false,
-      discountPercent: 21,
+      discountPercent: 16,
       features: [
-        { title: "Inspeksi mesin standar", included: true },
-        { title: "Cek kondisi bodi", included: true },
+        { title: "Inspeksi menyeluruh (Eksterior, Interior, Mesin & Transmisi, Dokumen, Dll)", included: true },
+        { title: "Laporan digital via web", included: true },
         { title: "Cek kondisi interior", included: true },
         { title: "City car & compact sedan", included: true },
         { title: "Laporan digital", included: true },
