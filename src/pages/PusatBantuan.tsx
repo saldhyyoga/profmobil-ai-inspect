@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -253,8 +252,8 @@ const PusatBantuan: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-12 bg-white">
+      {/* Contact Section - Added id for anchor link */}
+      <section id="contact-section" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">

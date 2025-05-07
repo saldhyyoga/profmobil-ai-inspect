@@ -70,25 +70,6 @@ const NavBar: React.FC = () => {
                       <NavigationMenuTrigger className="text-gray-700 hover:text-automotive-600 text-sm font-medium">Fitur</NavigationMenuTrigger>
                       <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4">
-                          <li className="row-span-3">
-                            <NavigationMenuLink asChild>
-                              <Link
-                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-automotive-50 to-automotive-100 p-6 no-underline outline-none focus:shadow-md"
-                                to="/fitur"
-                              >
-                                
-                                {/*
-                                <div className="mb-2 mt-4 text-lg font-medium text-automotive-600">
-                                  Fitur ProfMobil AI
-                                </div>
-                                <p className="text-sm leading-tight text-gray-600">
-                                  Jelajahi semua fitur unggulan kami untuk membantu Anda dalam transaksi mobil bekas.
-                                </p>
-                                */}
-                              
-                              </Link>
-                            </NavigationMenuLink>
-                          </li>
                           <ListItem href="/inspeksi-mobil-ai" title="Inspeksi Mobil + AI">
                             Inspeksi mobil dengan bantuan AI untuk hasil yang akurat dan terpercaya.
                           </ListItem>

@@ -119,6 +119,8 @@ const PricingSection = () => {
   const premiumCarWhatsAppLink = "https://wa.me/6282112302516?text=Halo%20ProfMobil%2C%20saya%20ingin%20booking%20inspeksi.%20Berikut%20data%20inspeksinya%20%3A%0A-%20Data%20Pemesan%0ANama%3A%20%0ANomor%20Handphone%3A%0AEmail%0A%0A-%20Data%20Mobil%20Yang%20Akan%20Di%20Inspeksi%20(Premium%20Car)%0AMerk%3A%0AModel%3A%0ATipe%3A%0ATahun%3A%0AWarna%0A%0A-%20Lokasi%20dan%20Waktu%0AKota%3A%0ATanggal%20Inspeksi%3A%0ACatatan%20Tambahan%3A%0A%0ATerimakasih";
   const regulerCarWhatsAppLink = "https://wa.me/6282112302516?text=Halo%20ProfMobil%2C%20saya%20ingin%20booking%20inspeksi.%20Berikut%20data%20inspeksinya%20%3A%0A-%20Data%20Pemesan%0ANama%3A%20%0ANomor%20Handphone%3A%0AEmail%0A%0A-%20Data%20Mobil%20Yang%20Akan%20Di%20Inspeksi%20(Reguler%20Car)%0AMerk%3A%0AModel%3A%0ATipe%3A%0ATahun%3A%0AWarna%0A%0A-%20Lokasi%20dan%20Waktu%0AKota%3A%0ATanggal%20Inspeksi%3A%0ACatatan%20Tambahan%3A%0A%0ATerimakasih";
   const luxuryCarWhatsAppLink = "https://wa.me/6282112302516?text=Halo%20ProfMobil%2C%20saya%20ingin%20booking%20inspeksi.%20Berikut%20data%20inspeksinya%20%3A%0A-%20Data%20Pemesan%0ANama%3A%20%0ANomor%20Handphone%3A%0AEmail%0A%0A-%20Data%20Mobil%20Yang%20Akan%20Di%20Inspeksi%20(Luxury%20Car)%0AMerk%3A%0AModel%3A%0ATipe%3A%0ATahun%3A%0AWarna%0A%0A-%20Lokasi%20dan%20Waktu%0AKota%3A%0ATanggal%20Inspeksi%3A%0ACatatan%20Tambahan%3A%0A%0ATerimakasih";
+  // Custom service WhatsApp link
+  const customServiceWhatsAppLink = "https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20khusus";
 
   const pricingTiers = [
     {
@@ -161,6 +163,11 @@ const PricingSection = () => {
       whatsappLink: luxuryCarWhatsAppLink
     }
   ];
+
+  // Handle click for custom service button
+  const handleCustomServiceClick = () => {
+    window.open(customServiceWhatsAppLink, '_blank');
+  };
 
   return (
     <section id="pricing" className="py-20 bg-gradient-to-b from-white to-gray-50">
@@ -228,8 +235,12 @@ const PricingSection = () => {
         
         <div className="mt-14 text-center">
           <p className="text-gray-500 mb-4">Butuh layanan khusus untuk kendaraan Anda?</p>
-          <Button variant="outline" className="border-automotive-600 text-automotive-600 hover:bg-automotive-50">
-            Hubungi Kami untuk Layanan Khusus
+          <Button 
+            variant="outline" 
+            className="border-automotive-600 text-automotive-600 hover:bg-automotive-50"
+            onClick={handleCustomServiceClick}
+          >
+            Pilih Paket Ini
           </Button>
         </div>
       </div>
